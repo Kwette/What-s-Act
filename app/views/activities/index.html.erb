@@ -40,14 +40,14 @@
       <!-- Grid of activities  -->
     <div class="activities_list cards color_white text-center "id="activity-map-container">
       <% @activities.each do |activity| %>
-        <%= link_to activity_path(activity) do%>
+        <%= link_to activity_path(activity) do %>
         <% if activity.photo.blank? %>
           <div class="card-category" style="background-image:
             url('images/Surf.jpg');
             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
         <% else %>
           <div class="card-category" style="background-image:
-            url('<%= cl_image_path activity.photo, height: 300, width: 400, crop: :fill%>');
+            url('<%= cl_image_path activity.photo, height: 300, width: 400, crop: :fill %>');
             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
         <% end %>
               <div class="activity-title d-flex justify-content-between align-items-center pl-3 pr-3" style="height: 60px;">

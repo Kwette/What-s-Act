@@ -18393,3 +18393,261 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 84ms (Views: 78.4ms | ActiveRecord: 2.2ms)
 
 
+Started GET "/" for ::1 at 2019-09-14 18:03:09 +0200
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2476.1ms)
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  Rendered shared/_navbar.html.erb (171.3ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 2870ms (Views: 2802.8ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/activities" for ::1 at 2019-09-14 18:03:21 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (6.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (0.6ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (3.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (61.5ms)
+Completed 500 Internal Server Error in 187ms (ActiveRecord: 64.2ms)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+    47:             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+    48:         <% else %>
+    49:           <div class="card-category" style="background-image:
+    50:             url('<%= cl_image_path activity.photo, height: 300, width: 400, crop: :fill%>');
+    51:             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+    52:         <% end %>
+    53:               <div class="activity-title d-flex justify-content-between align-items-center pl-3 pr-3" style="height: 60px;">
+  
+app/views/activities/index.html.erb:50:in `block (2 levels) in _app_views_activities_index_html_erb___4611596689656147719_70193108110860'
+app/views/activities/index.html.erb:43:in `block in _app_views_activities_index_html_erb___4611596689656147719_70193108110860'
+app/views/activities/index.html.erb:42:in `_app_views_activities_index_html_erb___4611596689656147719_70193108110860'
+Started GET "/activities" for ::1 at 2019-09-14 18:03:34 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (0.9ms)
+  Rendered activities/_infowindow.html.erb (0.2ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+    47:             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+    48:         <% else %>
+    49:           <div class="card-category" style="background-image:
+    50:             url('<%= cl_image_path activity.photo, height: 300, width: 400, crop: :fill%>');
+    51:             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+    52:         <% end %>
+    53:               <div class="activity-title d-flex justify-content-between align-items-center pl-3 pr-3" style="height: 60px;">
+  
+app/views/activities/index.html.erb:50:in `block (2 levels) in _app_views_activities_index_html_erb___4611596689656147719_70193095564720'
+app/views/activities/index.html.erb:43:in `block in _app_views_activities_index_html_erb___4611596689656147719_70193095564720'
+app/views/activities/index.html.erb:42:in `_app_views_activities_index_html_erb___4611596689656147719_70193095564720'
+Started GET "/activities?location=marseille" for ::1 at 2019-09-14 18:03:45 +0200
+Processing by ActivitiesController#index as HTML
+  Parameters: {"location"=>"marseille"}
+  [1m[36mActivity Load (3.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (1.2ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.2ms)
+  Rendered activities/_infowindow.html.erb (0.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:16
+Completed 500 Internal Server Error in 732ms (ActiveRecord: 4.8ms)
+
+
+  
+Algolia::AlgoliaProtocolError (Cannot reach any host: getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS.algolia.net:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-1.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-2.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-3.algolianet.com:443)):
+  
+app/controllers/activities_controller.rb:16:in `index'
+Started GET "/activities" for ::1 at 2019-09-14 18:06:48 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (1.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (4.9ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.2ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (27.3ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+    47:             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+    48:         <% else %>
+    49:           <div class="card-category" style="background-image:
+    50:             url('<%= cl_image_path activity.photo, height: 300, width: 400, crop: :fill%>');
+    51:             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+    52:         <% end %>
+    53:               <div class="activity-title d-flex justify-content-between align-items-center pl-3 pr-3" style="height: 60px;">
+  
+app/views/activities/index.html.erb:50:in `block (2 levels) in _app_views_activities_index_html_erb___4611596689656147719_70193037826060'
+app/views/activities/index.html.erb:43:in `block in _app_views_activities_index_html_erb___4611596689656147719_70193037826060'
+app/views/activities/index.html.erb:42:in `_app_views_activities_index_html_erb___4611596689656147719_70193037826060'
+Started GET "/bookings" for ::1 at 2019-09-14 18:06:53 +0200
+Processing by BookingsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering bookings/index.html.erb within layouts/application
+  [1m[35m (50.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 26]]
+  ↳ app/views/bookings/index.html.erb:3
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1 ORDER BY "bookings"."created_at" DESC[0m  [["user_id", 26]]
+  ↳ app/views/bookings/index.html.erb:5
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/views/bookings/index.html.erb:7
+  Rendered bookings/index.html.erb within layouts/application (126.5ms)
+Completed 500 Internal Server Error in 312ms (ActiveRecord: 58.2ms)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+    4: 
+    5: <% @bookings.each do |booking| %>
+    6: <div class="card-product card-product-margin-content">
+    7:   <%= cl_image_tag booking.activity.photo, height: 300, width: 400, crop: :fill %>
+    8:   <div class="card-product-infos">
+    9:     <h2><%= booking.activity.name.capitalize %></h2>
+   10:     <div class="card-product-infos-details">
+  
+app/views/bookings/index.html.erb:7:in `block in _app_views_bookings_index_html_erb__3377755102481803460_70193096262920'
+app/views/bookings/index.html.erb:5:in `_app_views_bookings_index_html_erb__3377755102481803460_70193096262920'
+Started GET "/activities" for ::1 at 2019-09-14 18:06:58 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (0.7ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+    47:             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+    48:         <% else %>
+    49:           <div class="card-category" style="background-image:
+    50:             url('<%= cl_image_path activity.photo, height: 300, width: 400, crop: :fill%>');
+    51:             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+    52:         <% end %>
+    53:               <div class="activity-title d-flex justify-content-between align-items-center pl-3 pr-3" style="height: 60px;">
+  
+app/views/activities/index.html.erb:50:in `block (2 levels) in _app_views_activities_index_html_erb___4611596689656147719_70193045664320'
+app/views/activities/index.html.erb:43:in `block in _app_views_activities_index_html_erb___4611596689656147719_70193045664320'
+app/views/activities/index.html.erb:42:in `_app_views_activities_index_html_erb___4611596689656147719_70193045664320'
+Started GET "/activities" for ::1 at 2019-09-14 18:09:16 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (0.8ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.2ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+    47:             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+    48:         <% else %>
+    49:           <div class="card-category" style="background-image:
+    50:             url('<%= cl_image_path activity.photo, height: 300, width: 400, crop: :fill%>');
+    51:             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+    52:         <% end %>
+    53:               <div class="activity-title d-flex justify-content-between align-items-center pl-3 pr-3" style="height: 60px;">
+  
+app/views/activities/index.html.erb:50:in `block (2 levels) in _app_views_activities_index_html_erb___4611596689656147719_70193107965100'
+app/views/activities/index.html.erb:43:in `block in _app_views_activities_index_html_erb___4611596689656147719_70193107965100'
+app/views/activities/index.html.erb:42:in `_app_views_activities_index_html_erb___4611596689656147719_70193107965100'
+Started GET "/activities" for ::1 at 2019-09-14 18:10:41 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (0.7ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.2ms)
+  Rendered activities/_infowindow.html.erb (0.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+    47:             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+    48:         <% else %>
+    49:           <div class="card-category" style="background-image:
+    50:             url('<%= cl_image_path activity.photo, height: 300, width: 400, crop: :fill %>');
+    51:             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+    52:         <% end %>
+    53:               <div class="activity-title d-flex justify-content-between align-items-center pl-3 pr-3" style="height: 60px;">
+  
+app/views/activities/index.html.erb:50:in `block (2 levels) in _app_views_activities_index_html_erb___4611596689656147719_70193095263840'
+app/views/activities/index.html.erb:43:in `block in _app_views_activities_index_html_erb___4611596689656147719_70193095263840'
+app/views/activities/index.html.erb:42:in `_app_views_activities_index_html_erb___4611596689656147719_70193095263840'
