@@ -1,0 +1,41 @@
+.container-message{
+margin: 20px 300px 0px 300px;
+padding: 30px 100px;
+height: 85vh;
+border: 1px solid #2F0197;
+position: relative;
+border-radius: 5px;
+}
+.form-message{
+  position: absolute;
+  bottom: 40px;
+}
+.message-inside{
+margin: 0px 100px;
+padding: 30px 100px;
+position: relative;
+}
+.message-box{
+  max-width: 60%;
+  padding: 10px 20px 10px 23px;
+  min-width: 25%;
+  border-radius: 25px;
+  margin-bottom: 5px;
+}
+.message-box p{
+  margin-bottom: 0px;
+}
+.sender-box{
+  //position: sticky;
+  //right: 10;
+  background-color: #A8C5DD;
+}
+.receiver-box{
+  //position: sticky;
+  //left: 10;
+  background-color: #F1F1F1;
+}
+p.message-date{
+  color: rgba(0,0,0,0.3);
+  font-size: 13px;
+}

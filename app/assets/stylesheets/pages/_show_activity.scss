@@ -1,0 +1,79 @@
+.container-page-sh{
+  margin: 0px 170px;
+}
+.form-container {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  background-color: white;
+  padding: 30px;
+  // width: 350px;
+  margin: 0 auto;
+  border: 1px solid rgba(150,150,150,0.2);
+}
+.header {
+  margin-bottom: 20px;
+}
+.header-row {
+  display: flex;
+  align-items: center;
+}
+.big-bold {
+  font-weight: bold;
+  font-size: 24px;
+  margin-right: 5px;
+}
+.small-light {
+  font-size: 12px;
+  color: #969696;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+#counter {
+  margin: 0 15px;
+}
+.round-bordered {
+  border: 1px solid #5a5a5a;
+  border-radius: 50%;
+  width: 35px;
+  font-size: 18px;
+  color: #848484;
+  height: 35px;
+  padding: 3px
+}
+.orange-color {
+  color: #EC6423;
+}
+.cards-reviews {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+.banner-photo {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+.container-details{
+  flex: 1;
+  padding: 40px 50px 0px 30px;
+}
+.owner img {
+  width: 60px;
+  height: 60px;
+}
+.review-create a{
+  color: #357A1D;
+}
+#total-price{
+  font-size: 18px;
+}
+.red-color{
+  color: red;
+}
+.green-color{
+  color: green;
+}

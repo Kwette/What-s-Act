@@ -1,0 +1,128 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.color_white{
+  color: white;
+}
+
+span {
+  font-size : 12px;
+}
+
+.activity-title{
+  background-color: white;
+  color: #23282E;
+  padding: 5px;
+}
+
+.activity-title h3 {
+  margin-bottom: 0;
+}
+
+.card-category {
+background-size: cover;
+background-position: center;
+min-height: 35vh;
+position : relative;
+// border-radius : 15px;
+}
+
+.activities_list {
+  padding-top: 10px;
+}
+
+.card_bottom_info {
+  color: #23282E;
+  background-color: white;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  font-weight: bolder;
+   margin-bottom: 0;
+  padding: 5px;
+}
+
+#nb-people {
+  font-size: 12px;
+  font-weight: lighter;
+
+}
+
+#place {
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.card_bottom_info p {
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+.card-activity {
+  height: 30vh;
+  border-radius : 10px;
+}
+
+.description {
+  background-color: white;
+  color: #23282E;
+  padding: 10px;
+  flex-grow : 1;
+}
+
+.description h5 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.when-start-end {
+  background-color: #23282E;
+  color: white;
+}
+
+.when-start-end span {
+  font-weight : 600;
+  font-size : 16px;
+}
+
+.when-start-end p {
+  margin-bottom : 0;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}

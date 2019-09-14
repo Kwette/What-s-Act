@@ -1,0 +1,17 @@
+function refreshForm(innerHTML) {
+  const newReviewForm = document.getElementById('message-form');
+  newReviewForm.innerHTML = innerHTML;
+}
+
+function addReview(reviewHTML) {
+  const messages = document.querySelector('#messages');
+  messages.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+
+<% if @message.errors.any? %>
+  refreshForm('<%= j render "form", booking: @booking, message: @message %>');
+<% else %>
+  addReview("<%= j render 'show', message: @message %>");
+  refreshForm("<%= j render 'form', booking: @booking, message: Message.new %>");
+<% end %>

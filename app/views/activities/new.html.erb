@@ -1,0 +1,36 @@
+
+    <div class="container-new-activity">
+    <h1>New activity</h1>
+    <div class="d-flex">
+      <div class="col-md-6">
+        <%= simple_form_for @activity do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.input :max_participants %>
+        <%= f.input :address %>
+        <%= f.input :type_activity, collection: ["Outdoor", "Indoor"] %>
+      </div>
+         <div class="col-md-4">
+           <%= f.input :start_date, as: :string, input_html: { id: "range_start" } %>
+           <%= f.input :end_date, as: :string, input_html: {id: "range_end"} %>
+           <%= f.input :photo %>
+           <%= f.input :photo_cache, as: :hidden %>
+           <%= f.button :submit, class: "btn btn-outline-primary" %>
+        <% end %>
+
+       <!--    <div class="form-group">
+         <label>Upload Image</label>
+         <div class="input-group">
+           <span class="input-group-btn">
+             <span class="btn btn-default btn-file">
+               Upload your pictures<input type="file" id="imgInp">
+             </span>
+           </span>
+         </div>
+         <img id='img-upload'/>
+       </div>
+               </div> -->
+      </div>
+    </div>
+    </div>

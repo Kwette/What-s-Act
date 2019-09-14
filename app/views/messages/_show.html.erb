@@ -1,0 +1,11 @@
+ <% if message.sender == current_user  %>
+  <div class="message-box sender-box d-flex justify-content-between">
+    <p><%= message.content %></p>
+    <p class="message-date"><%= message.date.strftime("%Y-%d-%m") %> <%= message.date.strftime("at %I:%M%p") %></p>
+  </div>
+<% else %>
+  <div class="message-box receiver-box d-flex justify-content-between">
+    <p><%= message.content %></p>
+      <p class="message-date"><%= message.date.strftime("%Y-%d-%m") %><%= message.date.strftime("at %I:%M%p") %></p>
+  </div>
+<% end %>

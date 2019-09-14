@@ -1,0 +1,113 @@
+<div>
+  <div class="container-page-sh">
+    <% if !@activity.photo.blank? %>
+    <div class="banner-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+    url('<%= cl_image_path @activity.photo, height: 300, width: 400, crop: :fill %>')"></div>
+    <% else %>
+    <div class="banner-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+    url('<%= cl_image_path 'surf.jpg', height: 300, width: 400, crop: :fill %>')"></div>
+    <% end %>
+    <div class="d-flex justify-content-between">
+      <div class="container-details h-100">
+        <div class="d-flex justify-content-between mb-3 align-items-center">
+          <h3><%= @activity.name.capitalize %></h3>
+          <h5><%= @activity.type_activity %></h5>
+          <div class="owner mr-2">
+            <%= image_tag 'avatar.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <p class="text-center"><%= @activity.seller.first_name %></p>
+          </div>
+        </div>
+        <div class="d-flex mb-3">
+          <% if @activity.start_date != nil && @activity.end_date != nil %>
+
+          <p class="mr-5">From: <%= @activity.start_date.strftime("%Y-%d-%m") %></p>
+          <p class="ml-5">To: <%= @activity.end_date.strftime("%Y-%d-%m") %></p>
+          <% end %>
+        </div>
+
+        <% if @activity.reviews != [] %>
+            <% Review.where(activity: @activity).average(:rating).round.times do  %>
+
+        <i class="fas fa-star orange-color"></i>
+        <% end %>
+
+        (<%= @activity.reviews.count %>)
+        <% end %>
+
+        <div class="d-flex justify-content-between">
+          <h6 class="mb-2 text-muted"><i class="fas fa-map-marker-alt"></i> <%= @activity.address %></h6>
+          <p>Max: <%= @activity.max_participants %> <i class="fas fa-user-friends"></i></p>
+        </div>
+        <p style="min-height: 200px; margin-top: 20px;margin-bottom: 40px; color: black;"><%= @activity.description %></p>
+      </div>
+      <div class="container-new-booking">
+        <div class="form-container mt-5">
+          <div class="header">
+            <div class="header-row mb-1">
+              <div class="big-bold" id="price" data-amount-cents="1"><%= @activity.price %>€</div>
+              <div class="small-light"> / PARTICIPANT</div>
+            </div>
+            <% if !Review.where(activity: @activity).empty? %>
+            <% Review.where(activity: @activity).average(:rating).round.times do  %>
+            <i class="fas fa-star orange-color"></i>
+            <% end %>
+            (<%= @activity.reviews.count %>)
+            <% end %>
+          </div>
+          <%= simple_form_for([@activity, @booking]) do |f| %>
+          <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker", value: @activity.start_date} %>
+          <div class="flex-between mt-4">
+            Participants:
+            <div class="actions">
+              <btn href="#" class="btn round-bordered incrementer minus" disabled data-offset="-1">-</btn>
+              <span id="counter" data-count="1">1</span>
+              <btn href="#" class="btn round-bordered incrementer plus" data-offset="1">+</btn>
+            </div>
+          </div>
+          <%= f.input :participants_number, as: :hidden %>
+          <div class="d-flex justify-content-between ">
+            <div>Total price:</div>
+            <div id="total-price" class="mb-4 mr-4"> <strong><%= @activity.price %>€ </strong></div>
+          </div>
+          <%= f.button :submit, class: 'btn btn-flat btn-block' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="call-to-action delete-btn d-flex">
+      <%= link_to "Delete activity", seller_activity_path(@activity),
+      method: :delete,
+      data: { confirm: "Are you sure?" }%>
+    </div>
+    <div class="p-5">
+      <h3>Reviews</h3>
+      <div class="review-create">
+        <a href="#form-review">Leave a review</a>
+      </div>
+      <% if @activity.reviews == [] %>
+      <p>No reviews yet</p>
+      <% else %>
+      <div class="cards-reviews">
+        <% @activity.reviews.each do |review| %>
+        <div class="card my-2" style="width: 40rem;">
+          <div class="card-body d-flex justify-content-between">
+            <div class="review-content">
+              <h5 class="card-title"><%= current_user.first_name %></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= Date.today %></h6>
+              <p class="card-text"><%= review.content %></p>
+            </div>
+            <div class="review-stars orange-color">
+              <p>
+                <% review.rating.times do %>
+                <i class="fas fa-star"></i>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <%= javascript_pack_tag 'plusminus' %>

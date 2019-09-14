@@ -1,0 +1,32 @@
+.delete-btn {
+  width: 30%;
+  margin: auto;
+}
+
+.call-to-action > .btn, .call-to-action > a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  background-color: #57B894;
+  border-radius: 37px;
+  padding: 5% 10%;
+  margin-top: 7vh;
+  margin-bottom: 7vh;
+  transition: all 0.4s ease;
+}
+
+.call-to-action:hover, .call-to-action > a:hover{
+  // opacity: 0.6;
+  background-color: inherit;
+
+}
+
+.call-to-action > .btn:hover, .call-to-action > a:hover {
+ transition: all 0.4s ease;
+ color:  #57B894;
+ background-color: inherit;
+ font-size: 18px;
+ border: 1px solid  #57B894;
+}

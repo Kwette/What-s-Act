@@ -1,0 +1,33 @@
+
+<div class="container p-4 booking-height">
+  <h3 class='mb-4'>Bookings (<%= @bookings.count %>)</h3>
+
+<% @bookings.each do |booking| %>
+<div class="card-product card-product-margin-content">
+  <%= cl_image_tag booking.activity.photo, height: 300, width: 400, crop: :fill %>
+  <div class="card-product-infos">
+    <h2><%= booking.activity.name.capitalize %></h2>
+    <div class="card-product-infos-details">
+    <p>Date: <%= booking.date.strftime("%Y-%d-%m") %></p>
+    <p> <%= booking.participants_number %> <i class="fas fa-user-friends"></i></p>
+    <p> Total price: <strong><%= booking.total_price %>€</strong></p>
+    </div>
+  </div>
+
+  <p><%= link_to "Contact owner", new_booking_message_path(booking), class: 'btn btn-outline-success mr-3'%></p>
+
+  <div class="card-product-status">
+    <h2>
+      <% if booking.status == "pending" %>
+      <i class="fas fa-hourglass-half" style="color:#EC6423;"></i>
+      <% elsif booking.status == "accepted" %>
+        <i class="fas fa-check" style="color:#4EAF50;"></i>
+        <% else %>
+        <i class="far fa-times-circle" style="color:#B00E23;"></i>
+      <% end %>
+      <%= booking.status.capitalize %></h2>
+      <p> <%= link_to "View activity", activity_path(booking.activity) %></p>
+  </div>
+</div>
+<% end %>
+</div>

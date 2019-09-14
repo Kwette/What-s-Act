@@ -1,0 +1,11 @@
+<div class="container-message">
+  <h1>Messages</h1>
+  <div class="message-inside" id="messages">
+    <% @messages.each do |message| %>
+     <%= render 'show', message: message %>
+    <% end %>
+  </div>
+  <div id="message-form">
+    <%= render 'form', booking: @booking, message: @message %>
+  </div>
+</div>

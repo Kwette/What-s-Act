@@ -1,0 +1,27 @@
+.go-top {
+    position: fixed;
+    bottom: 0.75em;
+    right: 0.5em;
+    text-decoration: none;
+    font-size: 40px;
+    padding: 10px;
+    display: none;
+    margin: 0;
+}
+
+.go-top:hover {
+    text-decoration: none;
+}
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 80px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+
+  cursor: pointer; /* Add a mouse pointer on hover */
+
+}

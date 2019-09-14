@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>ActnB</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <link rel="icon" type="image/png" href="https://branditprintit.com/wp-content/uploads/2017/04/logo-degin-logo-design-design-art-free.png"/>
+  </head>
+  <body>
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+
+      <%= yield %>
+<!--       <a  id="myBtn" title="Go to top">Top</a>
+ -->      <a href="#" id="myBtn" class="go-top" style="display: none;"><i class="far fa-arrow-alt-circle-up"></i></a>
+      <%= render 'shared/footer' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+  </body>
+</html>
