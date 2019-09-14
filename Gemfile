@@ -29,7 +29,7 @@ group :development, :test do
 end
 
 gem 'faker'
-gem 'devise'
+gem 'devise', '~> 4.7.1'
 gem 'omniauth-facebook'
 gem 'omniauth-google'
 gem 'geocoder'

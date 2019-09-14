@@ -47,7 +47,7 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
         <% else %>
           <div class="card-category" style="background-image:
-            url('<%= cl_image_path activity.photo, height: 300, width: 400, crop: :fill %>');
+            url('<%=cl_image_path activity.photo, height: 300, width: 400, crop: :fill%>');
             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
         <% end %>
               <div class="activity-title d-flex justify-content-between align-items-center pl-3 pr-3" style="height: 60px;">

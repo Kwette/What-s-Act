@@ -20490,3 +20490,1952 @@ ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
 app/views/activities/index.html.erb:50:in `block (2 levels) in _app_views_activities_index_html_erb___1073853779792232626_70221246307660'
 app/views/activities/index.html.erb:43:in `block in _app_views_activities_index_html_erb___1073853779792232626_70221246307660'
 app/views/activities/index.html.erb:42:in `_app_views_activities_index_html_erb___1073853779792232626_70221246307660'
+Started GET "/" for ::1 at 2019-09-15 00:14:23 +0200
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+Started GET "/activities" for ::1 at 2019-09-15 00:14:26 +0200
+  Rendered pages/home.html.erb within layouts/application (3571.5ms)
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (21.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mActivity Load (26.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/views/shared/_navbar.html.erb:17
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered shared/_navbar.html.erb (244.9ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered activities/_infowindow.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (4.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (204.4ms)
+  Rendered shared/_navbar.html.erb (4.3ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 4331ms (Views: 4225.5ms | ActiveRecord: 54.5ms)
+
+
+Completed 200 OK in 470ms (Views: 296.4ms | ActiveRecord: 109.8ms)
+
+
+Started GET "/activities" for ::1 at 2019-09-15 00:14:56 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (5.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (2.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (10.6ms)
+  Rendered shared/_navbar.html.erb (46.8ms)
+  Rendered shared/_flashes.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 255ms (Views: 215.6ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/activities?location=" for ::1 at 2019-09-15 00:15:00 +0200
+Processing by ActivitiesController#index as HTML
+  Parameters: {"location"=>""}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (1.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:16
+Completed 500 Internal Server Error in 783ms (ActiveRecord: 0.9ms)
+
+
+  
+Algolia::AlgoliaProtocolError (Cannot reach any host: getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS.algolia.net:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-2.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-3.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-1.algolianet.com:443)):
+  
+app/controllers/activities_controller.rb:16:in `index'
+Started GET "/bookings" for ::1 at 2019-09-15 00:15:07 +0200
+Processing by BookingsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering bookings/index.html.erb within layouts/application
+  [1m[35m (42.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 21]]
+  ↳ app/views/bookings/index.html.erb:3
+  [1m[36mBooking Load (0.4ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1 ORDER BY "bookings"."created_at" DESC[0m  [["user_id", 21]]
+  ↳ app/views/bookings/index.html.erb:5
+  Rendered bookings/index.html.erb within layouts/application (46.5ms)
+  Rendered shared/_navbar.html.erb (4.3ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 267ms (Views: 73.4ms | ActiveRecord: 46.2ms)
+
+
+Started GET "/activities" for ::1 at 2019-09-15 00:15:09 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (1.5ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (5.5ms)
+  Rendered shared/_navbar.html.erb (4.9ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 129ms (Views: 80.0ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/activities/1" for ::1 at 2019-09-15 00:15:14 +0200
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:39
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:40
+  Rendering activities/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/activities/show.html.erb:18
+  [1m[36mReview Exists (82.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."activity_id" = $1 LIMIT $2[0m  [["activity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/activities/show.html.erb:44
+Started GET "/activities/1" for ::1 at 2019-09-15 00:15:17 +0200
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActivity Load (41.7ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:39
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:40
+  Rendering activities/show.html.erb within layouts/application
+  [1m[36mReview Load (2.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/views/activities/show.html.erb:76
+Started GET "/activities/1" for ::1 at 2019-09-15 00:15:18 +0200
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/activities/show.html.erb:18
+  [1m[36mReview Exists (4.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."activity_id" = $1 LIMIT $2[0m  [["activity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/activities/show.html.erb:44
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/views/activities/show.html.erb:76
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered activities/show.html.erb within layouts/application (164.5ms)
+  Rendered activities/show.html.erb within layouts/application (4738.7ms)
+  [1m[36mActivity Load (2.2ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:39
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:40
+  Rendering activities/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/activities/show.html.erb:18
+  [1m[36mReview Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."activity_id" = $1 LIMIT $2[0m  [["activity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/activities/show.html.erb:44
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/views/activities/show.html.erb:76
+  Rendered activities/show.html.erb within layouts/application (146.9ms)
+  Rendered shared/_navbar.html.erb (6.4ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+  Rendered shared/_navbar.html.erb (1.9ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+  Rendered shared/_navbar.html.erb (2.9ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 404ms (Views: 384.2ms | ActiveRecord: 6.3ms)
+
+
+Completed 200 OK in 5231ms (Views: 5065.8ms | ActiveRecord: 93.6ms)
+
+
+Completed 200 OK in 646ms (Views: 586.7ms | ActiveRecord: 50.0ms)
+
+
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (225.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rbnb_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (180.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rbnb_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (673.5ms)[0m  [1m[35mCREATE DATABASE "rbnb_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (467.9ms)[0m  [1m[35mCREATE DATABASE "rbnb_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (36.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (40.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20190527145023)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190527145023_devise_create_users.rb:5
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20190527145023_devise_create_users.rb:39
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20190527145023_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (3.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190527145023"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddOmniauthToUsers (20190527145730)
+  [1m[35m (40.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "users" ADD "facebook" character varying[0m
+  ↳ db/migrate/20190527145730_add_omniauth_to_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "uidfacebook" character varying[0m
+  ↳ db/migrate/20190527145730_add_omniauth_to_users.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190527145730"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddOmniauthGoogleToUsers (20190527145759)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "google" character varying[0m
+  ↳ db/migrate/20190527145759_add_omniauth_google_to_users.rb:3
+  [1m[35m (32.3ms)[0m  [1m[35mALTER TABLE "users" ADD "uidgoogle" character varying[0m
+  ↳ db/migrate/20190527145759_add_omniauth_google_to_users.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190527145759"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddColumnsToUsers (20190528083526)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  ↳ db/migrate/20190528083526_add_columns_to_users.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying[0m
+  ↳ db/migrate/20190528083526_add_columns_to_users.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "phone" character varying[0m
+  ↳ db/migrate/20190528083526_add_columns_to_users.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "address" character varying[0m
+  ↳ db/migrate/20190528083526_add_columns_to_users.rb:6
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "photo" character varying DEFAULT '../app/assets/default_avatar.png'[0m
+  ↳ db/migrate/20190528083526_add_columns_to_users.rb:7
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190528083526"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to ChangeDefaultPhotoToUsers (20190528090718)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (26.8ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "photo" TYPE character varying, ALTER COLUMN "photo" SET DEFAULT 'default_avatar.png'[0m
+  ↳ db/migrate/20190528090718_change_default_photo_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190528090718"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateActivities (20190528091345)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (31.3ms)[0m  [1m[35mCREATE TABLE "activities" ("id" bigserial primary key, "name" character varying, "address" character varying, "type" character varying, "price" integer, "description" text, "max_participants" integer, "seller_id" bigint, "start_date" timestamp, "end_date" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e6bda52bbe"
+FOREIGN KEY ("seller_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190528091345_create_activities.rb:3
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_activities_on_seller_id" ON "activities"  ("seller_id")[0m
+  ↳ db/migrate/20190528091345_create_activities.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190528091345"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateBookings (20190528091429)
+  [1m[35m (24.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "date" timestamp, "status" character varying DEFAULT 'pending', "total_price" integer, "participants_number" integer, "user_id" bigint, "activity_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_ef0571f117"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_4fd5faaa1e"
+FOREIGN KEY ("activity_id")
+  REFERENCES "activities" ("id")
+)[0m
+  ↳ db/migrate/20190528091429_create_bookings.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_user_id" ON "bookings"  ("user_id")[0m
+  ↳ db/migrate/20190528091429_create_bookings.rb:3
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_activity_id" ON "bookings"  ("activity_id")[0m
+  ↳ db/migrate/20190528091429_create_bookings.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190528091429"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to ChangeTypeToTypeActivityInActivities (20190528103412)
+  [1m[35m (37.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "activities" RENAME COLUMN "type" TO "type_activity"[0m
+  ↳ db/migrate/20190528103412_change_type_to_type_activity_in_activities.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190528103412"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddCoordinatesTo (20190529084500)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190529084500"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddCoordinatesToActivities (20190529085801)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "activities" ADD "latitude" float[0m
+  ↳ db/migrate/20190529085801_add_coordinates_to_activities.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "activities" ADD "longitude" float[0m
+  ↳ db/migrate/20190529085801_add_coordinates_to_activities.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190529085801"]]
+  ↳ bin/rails:9
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddPhotoToActivities (20190529100651)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "activities" ADD "photo" character varying DEFAULT 'surf.jpg'[0m
+  ↳ db/migrate/20190529100651_add_photo_to_activities.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190529100651"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateReviews (20190530124557)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (35.0ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "content" character varying, "rating" integer, "activity_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_3858a1ac2a"
+FOREIGN KEY ("activity_id")
+  REFERENCES "activities" ("id")
+)[0m
+  ↳ db/migrate/20190530124557_create_reviews.rb:3
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_activity_id" ON "reviews"  ("activity_id")[0m
+  ↳ db/migrate/20190530124557_create_reviews.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190530124557"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateMessages (20190531050651)
+  [1m[35m (40.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "content" character varying, "like" integer DEFAULT 0, "sender_id" bigint, "receiver_id" bigint, "booking_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b8f26a382d"
+FOREIGN KEY ("sender_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_67c67d2963"
+FOREIGN KEY ("receiver_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_a468c432e6"
+FOREIGN KEY ("booking_id")
+  REFERENCES "bookings" ("id")
+)[0m
+  ↳ db/migrate/20190531050651_create_messages.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_messages_on_sender_id" ON "messages"  ("sender_id")[0m
+  ↳ db/migrate/20190531050651_create_messages.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_messages_on_receiver_id" ON "messages"  ("receiver_id")[0m
+  ↳ db/migrate/20190531050651_create_messages.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_messages_on_booking_id" ON "messages"  ("booking_id")[0m
+  ↳ db/migrate/20190531050651_create_messages.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190531050651"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDateToMessages (20190531073502)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "messages" ADD "date" timestamp[0m
+  ↳ db/migrate/20190531073502_add_date_to_messages.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190531073502"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-14 22:18:20.438439"], ["updated_at", "2019-09-14 22:18:20.438439"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mBooking Load (37.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  ↳ db/seeds.rb:7
+  [1m[36mActivity Load (42.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harleymoriette@fritschlangosh.biz"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harleymoriette@fritschlangosh.biz"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "harleymoriette@fritschlangosh.biz"], ["encrypted_password", "$2a$11$zGW12zQQlGnpxm/ZdeNKGuNiU25n9OQWkWBSuNtzHcSEWklk/.czq"], ["created_at", "2019-09-14 22:18:52.037965"], ["updated_at", "2019-09-14 22:18:52.037965"], ["first_name", "Veda"], ["last_name", "Boyle"], ["phone", "1-195-559-9903"], ["address", "Apt. 519 3533 Loni Plaza, Hesselfurt, NE 80202-1861"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (41.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "annalee@ohara.name"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "annalee@ohara.name"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "annalee@ohara.name"], ["encrypted_password", "$2a$11$qmg.Sv8oLRekYbUSrfGLd.Tmmd09UxVYfP54kx4x8faKFAy2S51Ma"], ["created_at", "2019-09-14 22:18:52.243952"], ["updated_at", "2019-09-14 22:18:52.243952"], ["first_name", "Julieann"], ["last_name", "Reichel"], ["phone", "1-550-883-3772 x008"], ["address", "Apt. 703 3548 Ervin Mountain, Hellenburgh, ID 17022"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "elijah@kuvaliswilderman.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "elijah@kuvaliswilderman.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "elijah@kuvaliswilderman.net"], ["encrypted_password", "$2a$11$Az0mhFK5pr1zZ07x7MlvI.1ukAK4Ef6qfyVbuCBeQ0sRFy92dBDQS"], ["created_at", "2019-09-14 22:18:52.408739"], ["updated_at", "2019-09-14 22:18:52.408739"], ["first_name", "Georgeanna"], ["last_name", "Moen"], ["phone", "1-113-506-0069 x27546"], ["address", "Suite 307 789 Delbert Squares, South Jameeview, AK 88146-3492"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (41.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cleveland@blockbarton.info"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cleveland@blockbarton.info"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "cleveland@blockbarton.info"], ["encrypted_password", "$2a$11$DYFPWhvoyRdNI/sRnBNUyOwbujS6S2eiZ5N1N.UCieBeh20JZEn6."], ["created_at", "2019-09-14 22:18:52.616159"], ["updated_at", "2019-09-14 22:18:52.616159"], ["first_name", "Herman"], ["last_name", "Rempel"], ["phone", "898.599.7829 x486"], ["address", "6749 Beier Turnpike, South Carrolmouth, VA 96836"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "christinialarson@adamsgleason.io"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "christinialarson@adamsgleason.io"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "christinialarson@adamsgleason.io"], ["encrypted_password", "$2a$11$Whhy.qg/TM.VkEfQuDcQ0e6FGRE489tY2thvQ6yOerZH1SYtuFZ1m"], ["created_at", "2019-09-14 22:18:52.781325"], ["updated_at", "2019-09-14 22:18:52.781325"], ["first_name", "Samuel"], ["last_name", "Gutkowski"], ["phone", "1-582-384-5992 x90071"], ["address", "586 Caron Points, Errolfort, FL 38771"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "major@stracke.io"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "major@stracke.io"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "major@stracke.io"], ["encrypted_password", "$2a$11$V2gcoyBSknvI85IGWXHjsetsZTb1WyIy7s2/jImTLq3qsXf5JQAjm"], ["created_at", "2019-09-14 22:18:52.944441"], ["updated_at", "2019-09-14 22:18:52.944441"], ["first_name", "Lucio"], ["last_name", "Schultz"], ["phone", "694.124.5098"], ["address", "2841 Langosh Parkways, Lannyberg, KY 70741"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dean@nolanruel.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dean@nolanruel.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "dean@nolanruel.com"], ["encrypted_password", "$2a$11$p.CC.PZu22rtfVNGL.OgCe3q30LBshWx86Tsa8yZP11UX/7ZwZa0C"], ["created_at", "2019-09-14 22:18:53.109098"], ["updated_at", "2019-09-14 22:18:53.109098"], ["first_name", "Jayne"], ["last_name", "Stoltenberg"], ["phone", "1-630-297-2840 x631"], ["address", "Suite 591 842 Dylan Prairie, North Eddyville, SC 85410"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rey@beer.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rey@beer.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "rey@beer.co"], ["encrypted_password", "$2a$11$qtdOcuAHeXE59UehP0gUc.72/XA5iSX88C7h5DKLzyYpbm.VclxSG"], ["created_at", "2019-09-14 22:18:53.273912"], ["updated_at", "2019-09-14 22:18:53.273912"], ["first_name", "Edwardo"], ["last_name", "Heidenreich"], ["phone", "1-687-730-3627"], ["address", "Apt. 682 23288 Schaden Divide, Hellerhaven, AR 44136"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bradford@hickle.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bradford@hickle.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "bradford@hickle.net"], ["encrypted_password", "$2a$11$5dnmD/mdexhCcMSjrVGzAOdiaqh7/rSyUorSOR5zuiF1hcRAbBlsq"], ["created_at", "2019-09-14 22:18:53.439525"], ["updated_at", "2019-09-14 22:18:53.439525"], ["first_name", "Buford"], ["last_name", "McLaughlin"], ["phone", "797.931.7992"], ["address", "Suite 390 739 Bogisich Trafficway, Allenfort, RI 12742"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "billizieme@rath.biz"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "billizieme@rath.biz"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "billizieme@rath.biz"], ["encrypted_password", "$2a$11$WlcuiqC0ZR0gXqZ1rrLlOe.3HMfhF73GJ5pBTP6wSYz2s/rY0hpo2"], ["created_at", "2019-09-14 22:18:53.603117"], ["updated_at", "2019-09-14 22:18:53.603117"], ["first_name", "Haywood"], ["last_name", "Feest"], ["phone", "458-890-8176 x46505"], ["address", "Apt. 843 72286 Delores Lakes, West Benitoborough, AR 73820-1426"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tynisha@shields.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tynisha@shields.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "tynisha@shields.com"], ["encrypted_password", "$2a$11$V/71BEvHk.MGkEumVdilZ.8OAePfzr6.mN/q7L7IiZ5Mo5vJeOIi."], ["created_at", "2019-09-14 22:18:53.770685"], ["updated_at", "2019-09-14 22:18:53.770685"], ["first_name", "Melinda"], ["last_name", "Harris"], ["phone", "682-696-7525 x7754"], ["address", "5195 Langosh Vista, Lake Emilfort, WA 03164"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alfonso@ebert.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alfonso@ebert.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "alfonso@ebert.org"], ["encrypted_password", "$2a$11$O9fL1YlDGjPPZleKkZSrhuav0z/8d0EZnMG5ickqmoiAoWvckucqy"], ["created_at", "2019-09-14 22:18:53.936862"], ["updated_at", "2019-09-14 22:18:53.936862"], ["first_name", "Kyoko"], ["last_name", "Schiller"], ["phone", "1-882-048-4961 x3053"], ["address", "Apt. 304 4862 Isiah Spurs, Carybury, TX 68775-8623"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "coriebuckridge@purdyaltenwerth.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "coriebuckridge@purdyaltenwerth.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "coriebuckridge@purdyaltenwerth.co"], ["encrypted_password", "$2a$11$x.IW5oMQkyiXPK4KW7OnNuo1YiEvGO1s.uiVjAFEDuLmD.Rv./JUi"], ["created_at", "2019-09-14 22:18:54.098799"], ["updated_at", "2019-09-14 22:18:54.098799"], ["first_name", "Keshia"], ["last_name", "Hackett"], ["phone", "539.934.9222 x5963"], ["address", "Suite 187 654 Eloy Branch, Strosinchester, MS 78231-7295"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "carrolupton@dooley.info"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "carrolupton@dooley.info"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "carrolupton@dooley.info"], ["encrypted_password", "$2a$11$YyVNg9WVZD5nbdulTfBYYu3aliK24EIMxJKwWtnen.BhE4lv0iiZ2"], ["created_at", "2019-09-14 22:18:54.261350"], ["updated_at", "2019-09-14 22:18:54.261350"], ["first_name", "Denny"], ["last_name", "Harvey"], ["phone", "1-876-539-7574 x3971"], ["address", "Suite 203 16208 Conn Creek, Schambergerburgh, KY 22634"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lavernebruen@hodkiewiczoberbrunner.name"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lavernebruen@hodkiewiczoberbrunner.name"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "lavernebruen@hodkiewiczoberbrunner.name"], ["encrypted_password", "$2a$11$59ccAoeaMl4M60BV9idSFeqhypn3I.mIYlkU6i0q0TQAAQgUYKlZi"], ["created_at", "2019-09-14 22:18:54.425837"], ["updated_at", "2019-09-14 22:18:54.425837"], ["first_name", "Reed"], ["last_name", "Hickle"], ["phone", "857.778.6719"], ["address", "56071 Sawayn Locks, Port Salvadorhaven, CT 12997"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "arceliacremin@casper.biz"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "arceliacremin@casper.biz"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "arceliacremin@casper.biz"], ["encrypted_password", "$2a$11$hKvxOz0.1VZ2SKaMTOowi..iG0zzkPJJjxM3h2bUvDmRbrgnfAKTa"], ["created_at", "2019-09-14 22:18:54.589634"], ["updated_at", "2019-09-14 22:18:54.589634"], ["first_name", "Margarito"], ["last_name", "Kuhn"], ["phone", "1-208-094-0444 x42464"], ["address", "385 Yost Path, New Salenamouth, AZ 44688"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allena@gusikowski.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allena@gusikowski.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "allena@gusikowski.co"], ["encrypted_password", "$2a$11$iz4ig69KjxnrkMYgKEKJFuLlhpFjBHfxV2oNN76dpn6QhcZ1zbgY2"], ["created_at", "2019-09-14 22:18:54.754289"], ["updated_at", "2019-09-14 22:18:54.754289"], ["first_name", "Kim"], ["last_name", "Kemmer"], ["phone", "1-445-543-8220"], ["address", "8379 Mann Bypass, Hermanhaven, CT 86368"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "marlinrodriguez@hackett.info"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "marlinrodriguez@hackett.info"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "marlinrodriguez@hackett.info"], ["encrypted_password", "$2a$11$Gwvgtwfp0vgYNXEfQMBt2O4nvPqZ6ficcPWR7FkJMaVAPyj11tJuS"], ["created_at", "2019-09-14 22:18:54.916162"], ["updated_at", "2019-09-14 22:18:54.916162"], ["first_name", "Alfreda"], ["last_name", "Tromp"], ["phone", "1-911-136-2114 x30443"], ["address", "Apt. 479 6954 Kassulke Track, North Shelbytown, MS 70896"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "starlacarroll@ferry.biz"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "starlacarroll@ferry.biz"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "starlacarroll@ferry.biz"], ["encrypted_password", "$2a$11$8KGkXoI.f0mxdoQ99eZ5/ucMSgW/qGWXdRSS2J/2TM.huJPIyK10y"], ["created_at", "2019-09-14 22:18:55.080340"], ["updated_at", "2019-09-14 22:18:55.080340"], ["first_name", "Lazaro"], ["last_name", "Oberbrunner"], ["phone", "666.842.6798 x3114"], ["address", "3261 Shanahan Ridge, Port Barneyburgh, IN 21069-3839"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "franklynjacobson@klingveum.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "franklynjacobson@klingveum.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "franklynjacobson@klingveum.co"], ["encrypted_password", "$2a$11$Auwz21MiKh0Em5sasUkh5u.XS.IEHU.ERaOQEiRLOuZDtp7hw9iki"], ["created_at", "2019-09-14 22:18:55.240739"], ["updated_at", "2019-09-14 22:18:55.240739"], ["first_name", "Caitlyn"], ["last_name", "Strosin"], ["phone", "655-806-1196 x17954"], ["address", "7244 Leannon Union, Schultzberg, MO 80345-6772"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mActivity Create (44.9ms)[0m  [1m[32mINSERT INTO "activities" ("name", "address", "type_activity", "price", "description", "max_participants", "seller_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "parachute"], ["address", "89024 Bradtke Spurs, Nicolasashire, MO 22230-2169"], ["type_activity", "outdoor"], ["price", 16], ["description", "Velit nulla sed laboriosam."], ["max_participants", 2], ["seller_id", 1], ["start_date", "2019-09-20 00:00:00"], ["end_date", "2019-10-18 00:00:00"], ["created_at", "2019-09-14 22:18:55.743344"], ["updated_at", "2019-09-14 22:18:55.743344"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+Started GET "/" for ::1 at 2019-09-15 00:20:09 +0200
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (3992.4ms)
+  [1m[36mUser Load (29.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  Rendered shared/_navbar.html.erb (187.4ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 4402ms (Views: 4272.6ms | ActiveRecord: 77.2ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-09-15 00:20:19 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3480.9ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 3575ms (Views: 3548.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-09-15 00:20:39 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M2Ia7kawP33hWSjuxkkSj39siG6B74CPBoiDn6/Ueq6mEQnhmLMflj1vAQRdqa0Liyvn8sZxlZeLmWGT1FpjkA==", "user"=>{"first_name"=>"Émilie", "last_name"=>"Murat", "email"=>"thekwette@gmail.com", "address"=>"33 rue du Panorama", "phone"=>"685144923", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "thekwette@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "thekwette@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "phone", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "thekwette@gmail.com"], ["encrypted_password", "$2a$11$joF/TR.ark3xpbeOEHHCMe.gyBrkeOzPPjPE3Lwmovtir8Wtvv8Jm"], ["created_at", "2019-09-14 22:20:39.639723"], ["updated_at", "2019-09-14 22:20:39.639723"], ["first_name", "Émilie"], ["last_name", "Murat"], ["phone", "685144923"], ["address", "33 rue du Panorama"]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 245ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-09-15 00:20:39 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (45.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  Rendered shared/_navbar.html.erb (34.0ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 190ms (Views: 187.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/activities?location=marseille" for ::1 at 2019-09-15 00:20:51 +0200
+Processing by ActivitiesController#index as HTML
+  Parameters: {"location"=>"marseille"}
+  [1m[36mActivity Load (41.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:16
+Completed 500 Internal Server Error in 243ms (ActiveRecord: 45.2ms)
+
+
+  
+Algolia::AlgoliaProtocolError (Cannot reach any host: getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS.algolia.net:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-1.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-2.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-3.algolianet.com:443)):
+  
+app/controllers/activities_controller.rb:16:in `index'
+Started GET "/bookings" for ::1 at 2019-09-15 00:22:30 +0200
+Processing by BookingsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering bookings/index.html.erb within layouts/application
+  [1m[35m (25.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 21]]
+  ↳ app/views/bookings/index.html.erb:3
+  [1m[36mBooking Load (1.4ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1 ORDER BY "bookings"."created_at" DESC[0m  [["user_id", 21]]
+  ↳ app/views/bookings/index.html.erb:5
+  Rendered bookings/index.html.erb within layouts/application (33.1ms)
+  Rendered shared/_navbar.html.erb (39.7ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 348ms (Views: 197.6ms | ActiveRecord: 29.3ms)
+
+
+Started GET "/activities" for ::1 at 2019-09-15 00:22:33 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (213.0ms)
+  Rendered shared/_navbar.html.erb (3.8ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 377ms (Views: 278.0ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/activities/1" for ::1 at 2019-09-15 00:22:43 +0200
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:39
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:40
+  Rendering activities/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/activities/show.html.erb:18
+  [1m[36mReview Exists (42.7ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."activity_id" = $1 LIMIT $2[0m  [["activity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/activities/show.html.erb:44
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/views/activities/show.html.erb:76
+  Rendered activities/show.html.erb within layouts/application (93.6ms)
+  Rendered shared/_navbar.html.erb (2.0ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 203ms (Views: 108.2ms | ActiveRecord: 51.4ms)
+
+
+Started GET "/activities" for ::1 at 2019-09-15 00:22:55 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (5.7ms)
+  Rendered shared/_navbar.html.erb (3.7ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 74ms (Views: 66.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/seller/activities" for ::1 at 2019-09-15 00:23:03 +0200
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (2.1ms)
+  Rendered seller/components/_navbar.html.erb (4.3ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 89ms (Views: 80.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/activities" for ::1 at 2019-09-15 00:23:10 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (6.9ms)
+  Rendered shared/_navbar.html.erb (4.7ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 112ms (Views: 74.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/activities/1" for ::1 at 2019-09-15 00:23:12 +0200
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:39
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:40
+  Rendering activities/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/activities/show.html.erb:18
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."activity_id" = $1 LIMIT $2[0m  [["activity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/activities/show.html.erb:44
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/views/activities/show.html.erb:76
+  Rendered activities/show.html.erb within layouts/application (29.7ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 84ms (Views: 76.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/activities/1/bookings" for ::1 at 2019-09-15 00:23:17 +0200
+Processing by BookingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f51TR5sJ7OMXY68jcti6emPgcPrgXgPoD9uMGhqxl+Pq7kBIRQrMCMtVhsnpOAX+l6cfZqfAFvCCym4WYT+O3Q==", "booking"=>{"date"=>"2019-09-20", "participants_number"=>"3"}, "commit"=>"Create Booking", "activity_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookings_controller.rb:13
+  [1m[36mBooking Create (45.2ms)[0m  [1m[32mINSERT INTO "bookings" ("date", "total_price", "participants_number", "user_id", "activity_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["date", "2019-09-20 00:00:00"], ["total_price", 48], ["participants_number", 3], ["user_id", 21], ["activity_id", 1], ["created_at", "2019-09-14 22:23:17.701520"], ["updated_at", "2019-09-14 22:23:17.701520"]]
+  ↳ app/controllers/bookings_controller.rb:13
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookings_controller.rb:13
+Redirected to http://localhost:3000/bookings
+Completed 302 Found in 66ms (ActiveRecord: 47.4ms)
+
+
+Started GET "/bookings" for ::1 at 2019-09-15 00:23:17 +0200
+Processing by BookingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering bookings/index.html.erb within layouts/application
+  [1m[35m (41.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 21]]
+  ↳ app/views/bookings/index.html.erb:3
+  [1m[36mBooking Load (0.6ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1 ORDER BY "bookings"."created_at" DESC[0m  [["user_id", 21]]
+  ↳ app/views/bookings/index.html.erb:5
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookings/index.html.erb:7
+  Rendered bookings/index.html.erb within layouts/application (51.3ms)
+  Rendered shared/_navbar.html.erb (4.2ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 163ms (Views: 114.5ms | ActiveRecord: 42.5ms)
+
+
+Started GET "/activities" for ::1 at 2019-09-15 00:23:26 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (6.6ms)
+  Rendered shared/_navbar.html.erb (3.5ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 76ms (Views: 68.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/seller/activities" for ::1 at 2019-09-15 00:23:30 +0200
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (3.5ms)
+  Rendered seller/components/_navbar.html.erb (6.5ms)
+  Rendered shared/_flashes.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 147ms (Views: 123.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/seller/activities" for ::1 at 2019-09-15 00:23:33 +0200
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (1.5ms)
+  Rendered seller/components/_navbar.html.erb (4.3ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 56ms (Views: 49.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/seller/activities" for ::1 at 2019-09-15 00:23:36 +0200
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (1.3ms)
+  Rendered seller/components/_navbar.html.erb (4.5ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 58ms (Views: 51.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/seller/activities/new" for ::1 at 2019-09-15 00:23:37 +0200
+Processing by Seller::ActivitiesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering seller/activities/new.html.erb within layouts/seller
+  Rendered seller/activities/new.html.erb within layouts/seller (43.6ms)
+  Rendered seller/components/_navbar.html.erb (5.1ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 200ms (Views: 92.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-15 00:24:11 +0200
+Processing by ActivitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"52h+MEL9sRg/uHRxrKEiBJSeGiQkT4f3KDHAWNOhe11yG20/nP6R8+OOXZs3QZ2AYNl1uGPRku+lICJUqC9iYw==", "activity"=>{"name"=>"Émilie Murat", "description"=>"scs", "price"=>"11", "max_participants"=>"12", "address"=>"33 rue du Panorama", "type_activity"=>"Outdoor", "start_date"=>"2019-09-02 to 2019-09-13", "end_date"=>"September 13, 2019", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fae1945e830 @tempfile=#<Tempfile:/var/folders/sy/2rq_84313g330wtvk8z8p4d00000gn/T/RackMultipart20190915-8424-17ii1h4.pdf>, @original_filename="CV_FULL_STACK_2019.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"activity[photo]\"; filename=\"CV_FULL_STACK_2019.pdf\"\r\nContent-Type: application/pdf\r\n">, "photo_cache"=>""}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :photo_cache
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[36mActivity Create (3.3ms)[0m  [1m[32mINSERT INTO "activities" ("name", "address", "type_activity", "price", "description", "max_participants", "seller_id", "start_date", "end_date", "created_at", "updated_at", "latitude", "longitude", "photo") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["name", "Émilie Murat"], ["address", "33 rue du Panorama"], ["type_activity", "Outdoor"], ["price", 11], ["description", "scs"], ["max_participants", 12], ["seller_id", 21], ["start_date", "2019-09-02 00:00:00"], ["end_date", "2019-09-13 00:00:00"], ["created_at", "2019-09-14 22:24:12.137781"], ["updated_at", "2019-09-14 22:24:12.137781"], ["latitude", 47.743228], ["longitude", 7.3030106], ["photo", "lhlrhwztyxsawa8xji8h.pdf"]]
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[36mActivity Update All (38.2ms)[0m  [1m[33mUPDATE "activities" SET "photo" = 'image/upload/v1568499866/lhlrhwztyxsawa8xji8h.ai' WHERE "activities"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:31
+Completed 500 Internal Server Error in 16125ms (ActiveRecord: 83.1ms)
+
+
+  
+Algolia::AlgoliaProtocolError (Cannot reach any host: getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS.algolia.net:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-1.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-2.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-3.algolianet.com:443)):
+  
+app/controllers/activities_controller.rb:31:in `create'
+Started POST "/activities" for ::1 at 2019-09-15 00:24:46 +0200
+Processing by ActivitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"52h+MEL9sRg/uHRxrKEiBJSeGiQkT4f3KDHAWNOhe11yG20/nP6R8+OOXZs3QZ2AYNl1uGPRku+lICJUqC9iYw==", "activity"=>{"name"=>"Émilie Murat", "description"=>"scs", "price"=>"11", "max_participants"=>"12", "address"=>"33 rue du Panorama", "type_activity"=>"Outdoor", "start_date"=>"2019-09-09 to 2019-09-12", "end_date"=>"September 12, 2019", "photo_cache"=>""}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :photo_cache
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[36mActivity Create (0.7ms)[0m  [1m[32mINSERT INTO "activities" ("name", "address", "type_activity", "price", "description", "max_participants", "seller_id", "start_date", "end_date", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["name", "Émilie Murat"], ["address", "33 rue du Panorama"], ["type_activity", "Outdoor"], ["price", 11], ["description", "scs"], ["max_participants", 12], ["seller_id", 21], ["start_date", "2019-09-09 00:00:00"], ["end_date", "2019-09-12 00:00:00"], ["created_at", "2019-09-14 22:24:47.083786"], ["updated_at", "2019-09-14 22:24:47.083786"], ["latitude", 47.743228], ["longitude", 7.3030106]]
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:31
+Completed 500 Internal Server Error in 397ms (ActiveRecord: 3.3ms)
+
+
+  
+Algolia::AlgoliaProtocolError (Cannot reach any host: getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS.algolia.net:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-1.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-2.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-3.algolianet.com:443)):
+  
+app/controllers/activities_controller.rb:31:in `create'
+Started GET "/seller/activities/new" for ::1 at 2019-09-15 00:24:56 +0200
+Processing by Seller::ActivitiesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering seller/activities/new.html.erb within layouts/seller
+  Rendered seller/activities/new.html.erb within layouts/seller (23.7ms)
+  Rendered seller/components/_navbar.html.erb (45.7ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 329ms (Views: 208.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-09-15 00:24:59 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (45.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  Rendered shared/_navbar.html.erb (5.1ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 110ms (Views: 104.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/activities" for ::1 at 2019-09-15 00:25:04 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (1.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (5.5ms)
+  Rendered shared/_navbar.html.erb (3.5ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 112ms (Views: 54.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/activities" for ::1 at 2019-09-15 00:25:17 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (0.6ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (6.5ms)
+  Rendered shared/_navbar.html.erb (6.7ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 90ms (Views: 76.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/activities/3" for ::1 at 2019-09-15 00:25:21 +0200
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:39
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:40
+  Rendering activities/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/activities/show.html.erb:18
+  [1m[36mReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."activity_id" = $1 LIMIT $2[0m  [["activity_id", 3], ["LIMIT", 1]]
+  ↳ app/views/activities/show.html.erb:44
+  [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."activity_id" = $1[0m  [["activity_id", 3]]
+  ↳ app/views/activities/show.html.erb:76
+  Rendered activities/show.html.erb within layouts/application (37.5ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 93ms (Views: 83.3ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/activities/3/bookings" for ::1 at 2019-09-15 00:25:32 +0200
+Processing by BookingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rU6bP3AuRptKvDKeD4Ebl9ZSh+dQ6pqRUw1AAAmR+wQ4PYgwri1mcJaKG3SUYaQTIhXoexd0j4neHKIMch/iOg==", "booking"=>{"date"=>"2019-09-09", "participants_number"=>"4"}, "commit"=>"Create Booking", "activity_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookings_controller.rb:13
+  [1m[36mBooking Create (0.7ms)[0m  [1m[32mINSERT INTO "bookings" ("date", "total_price", "participants_number", "user_id", "activity_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["date", "2019-09-09 00:00:00"], ["total_price", 44], ["participants_number", 4], ["user_id", 21], ["activity_id", 3], ["created_at", "2019-09-14 22:25:32.250209"], ["updated_at", "2019-09-14 22:25:32.250209"]]
+  ↳ app/controllers/bookings_controller.rb:13
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookings_controller.rb:13
+Redirected to http://localhost:3000/bookings
+Completed 302 Found in 52ms (ActiveRecord: 42.4ms)
+
+
+Started GET "/bookings" for ::1 at 2019-09-15 00:25:32 +0200
+Processing by BookingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering bookings/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 21]]
+  ↳ app/views/bookings/index.html.erb:3
+  [1m[36mBooking Load (0.6ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1 ORDER BY "bookings"."created_at" DESC[0m  [["user_id", 21]]
+  ↳ app/views/bookings/index.html.erb:5
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/bookings/index.html.erb:7
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookings/index.html.erb:7
+  Rendered bookings/index.html.erb within layouts/application (10.0ms)
+  Rendered shared/_navbar.html.erb (3.8ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 76ms (Views: 68.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/seller/activities" for ::1 at 2019-09-15 00:25:37 +0200
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendered seller/activities/_infowindow.html.erb (1.5ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (2.8ms)
+  Rendered seller/components/_navbar.html.erb (47.7ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 215ms (Views: 156.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/seller/activities/new" for ::1 at 2019-09-15 00:30:56 +0200
+Processing by Seller::ActivitiesController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering seller/activities/new.html.erb within layouts/seller
+  Rendered seller/activities/new.html.erb within layouts/seller (102.6ms)
+  Rendered seller/components/_navbar.html.erb (46.9ms)
+  Rendered shared/_flashes.html.erb (1.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 347ms (Views: 292.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-15 00:31:38 +0200
+Processing by ActivitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kKrwX83CGRcSqs9n5tYLzrQWryGhxDzFUkS0sSPtprUF2eNQE8E5/M6c5o19NrRKQFHAveZaKd3fVVa9WGO/iw==", "activity"=>{"name"=>"Emilie", "description"=>"dsq", "price"=>"43", "max_participants"=>"45", "address"=>"33 rue du panorama", "type_activity"=>"Outdoor", "start_date"=>"2019-09-03 to 2019-09-10", "end_date"=>"September 10, 2019", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fae0fa5e078 @tempfile=#<Tempfile:/var/folders/sy/2rq_84313g330wtvk8z8p4d00000gn/T/RackMultipart20190915-8424-ws4bmi.jpg>, @original_filename="IMG-0070.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"activity[photo]\"; filename=\"IMG-0070.jpg\"\r\nContent-Type: image/jpeg\r\n">, "photo_cache"=>""}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :photo_cache
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[36mActivity Create (4.0ms)[0m  [1m[32mINSERT INTO "activities" ("name", "address", "type_activity", "price", "description", "max_participants", "seller_id", "start_date", "end_date", "created_at", "updated_at", "latitude", "longitude", "photo") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["name", "Emilie"], ["address", "33 rue du panorama"], ["type_activity", "Outdoor"], ["price", 43], ["description", "dsq"], ["max_participants", 45], ["seller_id", 21], ["start_date", "2019-09-03 00:00:00"], ["end_date", "2019-09-10 00:00:00"], ["created_at", "2019-09-14 22:31:38.815893"], ["updated_at", "2019-09-14 22:31:38.815893"], ["latitude", 47.743228], ["longitude", 7.3030106], ["photo", "ml7ulekbirkig3ghwboy.jpg"]]
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[36mActivity Update All (0.7ms)[0m  [1m[33mUPDATE "activities" SET "photo" = 'image/upload/v1568500300/ml7ulekbirkig3ghwboy.jpg' WHERE "activities"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[35m (42.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:31
+Completed 500 Internal Server Error in 3361ms (ActiveRecord: 47.7ms)
+
+
+  
+Algolia::AlgoliaProtocolError (Cannot reach any host: getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS.algolia.net:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-1.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-2.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-3.algolianet.com:443)):
+  
+app/controllers/activities_controller.rb:31:in `create'
+Started GET "/seller/activities" for ::1 at 2019-09-15 01:00:02 +0200
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (244.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (323.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendered seller/activities/_infowindow.html.erb (2.5ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (21.9ms)
+  Rendered seller/components/_navbar.html.erb (7.5ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 5389ms (Views: 3427.1ms | ActiveRecord: 1069.5ms)
+
+
+Started GET "/seller/activities/4" for ::1 at 2019-09-15 01:00:19 +0200
+Processing by Seller::ActivitiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/seller/activities_controller.rb:31
+  Rendering seller/activities/show.html.erb within layouts/seller
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/seller/activities/show.html.erb:17
+  [1m[36mReview Load (41.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."activity_id" = $1[0m  [["activity_id", 4]]
+  ↳ app/views/seller/activities/show.html.erb:28
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."activity_id" = $1 LIMIT $2[0m  [["activity_id", 4], ["LIMIT", 1]]
+  ↳ app/views/seller/activities/show.html.erb:50
+Started GET "/seller/activities/4" for ::1 at 2019-09-15 01:00:23 +0200
+  Rendered seller/activities/show.html.erb within layouts/seller (4320.1ms)
+Processing by Seller::ActivitiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/seller/activities_controller.rb:31
+  Rendering seller/activities/show.html.erb within layouts/seller
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/seller/activities/show.html.erb:17
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."activity_id" = $1[0m  [["activity_id", 4]]
+  ↳ app/views/seller/activities/show.html.erb:28
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."activity_id" = $1 LIMIT $2[0m  [["activity_id", 4], ["LIMIT", 1]]
+  ↳ app/views/seller/activities/show.html.erb:50
+  Rendered seller/components/_navbar.html.erb (2.1ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+  Rendered seller/activities/show.html.erb within layouts/seller (45.2ms)
+Completed 200 OK in 4595ms (Views: 4452.1ms | ActiveRecord: 50.6ms)
+
+
+  Rendered seller/components/_navbar.html.erb (2.0ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 136ms (Views: 121.7ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/seller/activities/new" for ::1 at 2019-09-15 01:00:30 +0200
+Processing by Seller::ActivitiesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering seller/activities/new.html.erb within layouts/seller
+  Rendered seller/activities/new.html.erb within layouts/seller (62.6ms)
+  Rendered seller/components/_navbar.html.erb (9.3ms)
+  Rendered shared/_flashes.html.erb (2.3ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 184ms (Views: 176.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-15 01:01:07 +0200
+Processing by ActivitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iifaUV5oUYj06f8u7lzTLjlP26rxqOBIpEwwyM6vzO8fVMlegGtxYyjf1sR1vGyqzQi0NrY29VApXdLEtSHV0Q==", "activity"=>{"name"=>"act 2", "description"=>"blabla", "price"=>"50", "max_participants"=>"10", "address"=>"Marseille", "type_activity"=>"", "start_date"=>"2019-09-23 to 2019-09-26", "end_date"=>"September 26, 2019", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fc3257eb6f8 @tempfile=#<Tempfile:/var/folders/sy/2rq_84313g330wtvk8z8p4d00000gn/T/RackMultipart20190915-9149-1icxbmn.png>, @original_filename="AVATAR.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"activity[photo]\"; filename=\"AVATAR.png\"\r\nContent-Type: image/png\r\n">, "photo_cache"=>""}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :photo_cache
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/activities_controller.rb:31
+  Rendering activities/new.html.erb within layouts/application
+  Rendered activities/new.html.erb within layouts/application (26.4ms)
+  Rendered shared/_navbar.html.erb (3.9ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 924ms (Views: 194.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-15 01:01:15 +0200
+Processing by ActivitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdWGfxgqYSb7hHgYL6FHnc/Koj0r/1f8eBtbAmBkncWwppVwxilBzSeyUfK0QfgZO43NoWxhQuT1CrkOG+qE+w==", "activity"=>{"name"=>"act 2", "description"=>"blabla", "price"=>"50", "max_participants"=>"10", "address"=>"Marseille", "type_activity"=>"Outdoor", "start_date"=>"2019-01-01 to 2019-09-23 to 2019-09-26", "end_date"=>"September 23, 2019", "photo_cache"=>"1568502067-9149-0001-1930/AVATAR.png"}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :photo_cache
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[36mActivity Create (3.2ms)[0m  [1m[32mINSERT INTO "activities" ("name", "address", "type_activity", "price", "description", "max_participants", "seller_id", "start_date", "end_date", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["name", "act 2"], ["address", "Marseille"], ["type_activity", "Outdoor"], ["price", 50], ["description", "blabla"], ["max_participants", 10], ["seller_id", 21], ["start_date", "2019-01-01 00:00:00"], ["end_date", "2019-09-23 00:00:00"], ["created_at", "2019-09-14 23:01:16.514922"], ["updated_at", "2019-09-14 23:01:16.514922"], ["latitude", 43.2961743], ["longitude", 5.3699525]]
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:31
+Completed 500 Internal Server Error in 1745ms (ActiveRecord: 5.2ms)
+
+
+  
+Algolia::AlgoliaProtocolError (Cannot reach any host: getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS.algolia.net:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-1.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-3.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-2.algolianet.com:443)):
+  
+app/controllers/activities_controller.rb:31:in `create'
+Started GET "/seller/activities" for ::1 at 2019-09-15 01:01:27 +0200
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendered seller/activities/_infowindow.html.erb (0.6ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (3.0ms)
+  Rendered seller/components/_navbar.html.erb (3.4ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 79ms (Views: 57.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/seller/activities" for ::1 at 2019-09-15 01:01:38 +0200
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendered seller/activities/_infowindow.html.erb (0.9ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (3.2ms)
+  Rendered seller/components/_navbar.html.erb (27.8ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 111ms (Views: 87.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/seller/activities" for ::1 at 2019-09-15 01:01:59 +0200
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendered seller/activities/_infowindow.html.erb (1.7ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (5.9ms)
+  Rendered seller/components/_navbar.html.erb (61.2ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 510ms (Views: 478.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/seller/activities" for ::1 at 2019-09-15 01:02:49 +0200
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (43.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (1.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendered seller/activities/_infowindow.html.erb (2.9ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (24.4ms)
+  Rendered seller/components/_navbar.html.erb (8.9ms)
+  Rendered shared/_flashes.html.erb (4.7ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 3786ms (Views: 3424.0ms | ActiveRecord: 58.1ms)
+
+
+Started GET "/seller/activities/new" for ::1 at 2019-09-15 01:03:13 +0200
+Processing by Seller::ActivitiesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering seller/activities/new.html.erb within layouts/seller
+  Rendered seller/activities/new.html.erb within layouts/seller (3774.4ms)
+  Rendered seller/components/_navbar.html.erb (49.1ms)
+  Rendered shared/_flashes.html.erb (2.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Started GET "/seller/activities/new" for ::1 at 2019-09-15 01:03:17 +0200
+Completed 200 OK in 4049ms (Views: 4040.3ms | ActiveRecord: 0.7ms)
+
+
+Processing by Seller::ActivitiesController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering seller/activities/new.html.erb within layouts/seller
+  Rendered seller/activities/new.html.erb within layouts/seller (43.5ms)
+  Rendered seller/components/_navbar.html.erb (3.8ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 121ms (Views: 109.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-15 01:03:44 +0200
+Processing by ActivitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IguxyDcN1Kher8TDpyg5IDw++cbthaYWG8cUFMATRwK3eKLH6Q70Q4KZ7Sk8yIakyHmWWqobsw6W1vYYu51ePA==", "activity"=>{"name"=>"sdsqd", "description"=>"sqdsd", "price"=>"32", "max_participants"=>"3", "address"=>"Marseille", "type_activity"=>"Outdoor", "start_date"=>"2019-10-03 to 2019-10-24", "end_date"=>"October 24, 2019", "photo_cache"=>""}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :photo_cache
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[36mActivity Create (42.8ms)[0m  [1m[32mINSERT INTO "activities" ("name", "address", "type_activity", "price", "description", "max_participants", "seller_id", "start_date", "end_date", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["name", "sdsqd"], ["address", "Marseille"], ["type_activity", "Outdoor"], ["price", 32], ["description", "sqdsd"], ["max_participants", 3], ["seller_id", 21], ["start_date", "2019-10-03 00:00:00"], ["end_date", "2019-10-24 00:00:00"], ["created_at", "2019-09-14 23:03:45.068950"], ["updated_at", "2019-09-14 23:03:45.068950"], ["latitude", 43.2961743], ["longitude", 5.3699525]]
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:31
+Completed 500 Internal Server Error in 587ms (ActiveRecord: 44.8ms)
+
+
+  
+Algolia::AlgoliaProtocolError (Cannot reach any host: getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS.algolia.net:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-2.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-1.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-3.algolianet.com:443)):
+  
+app/controllers/activities_controller.rb:31:in `create'
+Started GET "/activities" for ::1 at 2019-09-15 01:03:51 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (43.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (0.6ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (7.4ms)
+  Rendered shared/_navbar.html.erb (4.1ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 179ms (Views: 114.3ms | ActiveRecord: 44.5ms)
+
+
+Started GET "/%3Cimg%20height=" for ::1 at 2019-09-15 01:03:52 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/%3Cimg%20height="):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/activities" for ::1 at 2019-09-15 01:03:59 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (0.8ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (8.6ms)
+  Rendered shared/_navbar.html.erb (3.5ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 85ms (Views: 64.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/%3Cimg%20height=" for ::1 at 2019-09-15 01:04:00 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/%3Cimg%20height="):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/seller/activities" for ::1 at 2019-09-15 01:04:36 +0200
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendered seller/activities/_infowindow.html.erb (0.7ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (4.5ms)
+  Rendered seller/components/_navbar.html.erb (45.6ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 254ms (Views: 229.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/seller/activities/new" for ::1 at 2019-09-15 01:04:46 +0200
+Processing by Seller::ActivitiesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering seller/activities/new.html.erb within layouts/seller
+  Rendered seller/activities/new.html.erb within layouts/seller (35.0ms)
+  Rendered seller/components/_navbar.html.erb (4.4ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 91ms (Views: 85.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/activities" for ::1 at 2019-09-15 01:06:04 +0200
+Processing by ActivitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"70EPCLA14pZMa00+ABKGo0K39RZkaJkthkiV2fzWfyV6MhwHbjbCfZBdZNSb8jkntvCaiiP2jDULWXfVh1hmGw==", "activity"=>{"name"=>"ssqc", "description"=>"wcw", "price"=>"44", "max_participants"=>"2", "address"=>"d", "type_activity"=>"Indoor", "start_date"=>"2019-09-26 to 2019-09-30", "end_date"=>"September 30, 2019", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fe3c4c80780 @tempfile=#<Tempfile:/var/folders/sy/2rq_84313g330wtvk8z8p4d00000gn/T/RackMultipart20190915-9228-1cc2u9d.jpg>, @original_filename="badges.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"activity[photo]\"; filename=\"badges.jpg\"\r\nContent-Type: image/jpeg\r\n">, "photo_cache"=>""}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :photo_cache
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[36mActivity Create (0.8ms)[0m  [1m[32mINSERT INTO "activities" ("name", "address", "type_activity", "price", "description", "max_participants", "seller_id", "start_date", "end_date", "created_at", "updated_at", "latitude", "longitude", "photo") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["name", "ssqc"], ["address", "d"], ["type_activity", "Indoor"], ["price", 44], ["description", "wcw"], ["max_participants", 2], ["seller_id", 21], ["start_date", "2019-09-26 00:00:00"], ["end_date", "2019-09-30 00:00:00"], ["created_at", "2019-09-14 23:06:05.047040"], ["updated_at", "2019-09-14 23:06:05.047040"], ["latitude", 58.96382725], ["longitude", 16.7299348116221], ["photo", "lhmvtq1g2ovahyxwrto8.jpg"]]
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[36mActivity Update All (0.7ms)[0m  [1m[33mUPDATE "activities" SET "photo" = 'image/upload/v1568502368/lhmvtq1g2ovahyxwrto8.jpg' WHERE "activities"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/activities_controller.rb:31
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:31
+Completed 500 Internal Server Error in 5513ms (ActiveRecord: 43.2ms)
+
+
+  
+Algolia::AlgoliaProtocolError (Cannot reach any host: getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS.algolia.net:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-2.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-1.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-3.algolianet.com:443)):
+  
+app/controllers/activities_controller.rb:31:in `create'
+Started GET "/" for ::1 at 2019-09-15 01:06:22 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (43.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  Rendered shared/_navbar.html.erb (49.2ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 198ms (Views: 194.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/seller/activities" for ::1 at 2019-09-15 01:06:27 +0200
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendered seller/activities/_infowindow.html.erb (1.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (5.8ms)
+  Rendered seller/components/_navbar.html.erb (3.8ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 127ms (Views: 59.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/seller/activities?location=" for ::1 at 2019-09-15 01:07:41 +0200
+Processing by Seller::ActivitiesController#index as HTML
+  Parameters: {"location"=>""}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (1.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendered seller/activities/_infowindow.html.erb (0.7ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (9.7ms)
+  Rendered seller/components/_navbar.html.erb (47.9ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 247ms (Views: 220.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/seller/bookings" for ::1 at 2019-09-15 01:07:46 +0200
+Processing by Seller::BookingsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering seller/bookings/index.html.erb within layouts/seller
+  [1m[36mBooking Load (4.8ms)[0m  [1m[34mSELECT bookings.* FROM "bookings" INNER JOIN "activities" ON "activities"."id" = "bookings"."activity_id" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/views/seller/bookings/index.html.erb:2
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/seller/bookings/index.html.erb:7
+  Rendered seller/bookings/index.html.erb within layouts/seller (33.2ms)
+  Rendered seller/components/_navbar.html.erb (5.5ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 327ms (Views: 97.0ms | ActiveRecord: 68.7ms)
+
+
+Started PATCH "/seller/bookings/2/confirmed" for ::1 at 2019-09-15 01:07:52 +0200
+Processing by Seller::BookingsController#confirmed as HTML
+  Parameters: {"authenticity_token"=>"l+qi2FKYsXv0tTGY0IE9dYj5bacEhXKLzjhBwznxPrUCmbHXjJuRkCiDGHJLYYLxfL4CO0MbZ5NDKaPPQn8niw==", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/seller/bookings_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/seller/bookings_controller.rb:12
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/seller/bookings_controller.rb:12
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/seller/bookings_controller.rb:12
+  [1m[36mBooking Update (0.7ms)[0m  [1m[33mUPDATE "bookings" SET "status" = $1, "updated_at" = $2 WHERE "bookings"."id" = $3[0m  [["status", "accepted"], ["updated_at", "2019-09-14 23:07:52.627329"], ["id", 2]]
+  ↳ app/controllers/seller/bookings_controller.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/seller/bookings_controller.rb:12
+Redirected to http://localhost:3000/seller/bookings
+Completed 302 Found in 24ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/seller/bookings" for ::1 at 2019-09-15 01:07:52 +0200
+Processing by Seller::BookingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering seller/bookings/index.html.erb within layouts/seller
+  [1m[36mBooking Load (0.6ms)[0m  [1m[34mSELECT bookings.* FROM "bookings" INNER JOIN "activities" ON "activities"."id" = "bookings"."activity_id" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/views/seller/bookings/index.html.erb:2
+  [1m[36mActivity Load (1.2ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/seller/bookings/index.html.erb:7
+  Rendered seller/bookings/index.html.erb within layouts/seller (9.5ms)
+  Rendered seller/components/_navbar.html.erb (3.9ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 75ms (Views: 66.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/seller/bookings" for ::1 at 2019-09-15 01:07:55 +0200
+Processing by Seller::BookingsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering seller/bookings/index.html.erb within layouts/seller
+  [1m[36mBooking Load (0.9ms)[0m  [1m[34mSELECT bookings.* FROM "bookings" INNER JOIN "activities" ON "activities"."id" = "bookings"."activity_id" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/views/seller/bookings/index.html.erb:2
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/seller/bookings/index.html.erb:7
+  Rendered seller/bookings/index.html.erb within layouts/seller (8.9ms)
+  Rendered seller/components/_navbar.html.erb (6.0ms)
+  Rendered shared/_flashes.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 98ms (Views: 86.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/activities" for ::1 at 2019-09-15 01:07:59 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (0.8ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.2ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (11.4ms)
+  Rendered shared/_navbar.html.erb (7.1ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 117ms (Views: 89.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/%3Cimg%20height=" for ::1 at 2019-09-15 01:07:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/%3Cimg%20height="):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/bookings" for ::1 at 2019-09-15 01:08:02 +0200
+Processing by BookingsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering bookings/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 21]]
+  ↳ app/views/bookings/index.html.erb:3
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1 ORDER BY "bookings"."created_at" DESC[0m  [["user_id", 21]]
+  ↳ app/views/bookings/index.html.erb:5
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/bookings/index.html.erb:7
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookings/index.html.erb:7
+  Rendered bookings/index.html.erb within layouts/application (9.7ms)
+  Rendered shared/_navbar.html.erb (4.0ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 122ms (Views: 69.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/bookings" for ::1 at 2019-09-15 01:08:42 +0200
+Processing by BookingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering bookings/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 21]]
+  ↳ app/views/bookings/index.html.erb:3
+  [1m[36mBooking Load (0.4ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1 ORDER BY "bookings"."created_at" DESC[0m  [["user_id", 21]]
+  ↳ app/views/bookings/index.html.erb:5
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/bookings/index.html.erb:7
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookings/index.html.erb:7
+  Rendered bookings/index.html.erb within layouts/application (10.9ms)
+  Rendered shared/_navbar.html.erb (27.4ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 189ms (Views: 168.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/activities" for ::1 at 2019-09-15 01:08:48 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (1.7ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (17.9ms)
+  Rendered shared/_navbar.html.erb (5.7ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 125ms (Views: 96.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/%3Cimg%20height=" for ::1 at 2019-09-15 01:08:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/%3Cimg%20height="):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/seller/activities" for ::1 at 2019-09-15 01:09:03 +0200
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendered seller/activities/_infowindow.html.erb (0.7ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (6.7ms)
+  Rendered seller/components/_navbar.html.erb (3.6ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 109ms (Views: 75.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/seller/%3Cimg%20height=" for ::1 at 2019-09-15 01:09:03 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/seller/%3Cimg%20height="):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/seller/activities" for ::1 at 2019-09-15 01:09:07 +0200
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (1.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendered seller/activities/_infowindow.html.erb (1.0ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (5.4ms)
+  Rendered seller/components/_navbar.html.erb (44.3ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 217ms (Views: 188.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/seller/%3Cimg%20height=" for ::1 at 2019-09-15 01:09:07 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/seller/%3Cimg%20height="):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/seller/activities" for ::1 at 2019-09-15 01:09:24 +0200
+Processing by Seller::ActivitiesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/Ordinateur/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."seller_id" = $1[0m  [["seller_id", 21]]
+  ↳ app/controllers/seller/activities_controller.rb:5
+  Rendered seller/activities/_infowindow.html.erb (0.9ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendered seller/activities/_infowindow.html.erb (0.1ms)
+  Rendering seller/activities/index.html.erb within layouts/seller
+  Rendered seller/activities/index.html.erb within layouts/seller (5.9ms)
+  Rendered seller/components/_navbar.html.erb (44.9ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 255ms (Views: 198.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/activities" for ::1 at 2019-09-15 01:09:48 +0200
+Processing by ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (0.6ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.2ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:18
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "activities" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/activities/index.html.erb:25
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" ORDER BY "activities"."created_at" DESC[0m
+  ↳ app/views/activities/index.html.erb:42
+  Rendered activities/index.html.erb within layouts/application (12.8ms)
+  Rendered shared/_navbar.html.erb (6.1ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 103ms (Views: 79.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/activities?location=" for ::1 at 2019-09-15 01:10:05 +0200
+Processing by ActivitiesController#index as HTML
+  Parameters: {"location"=>""}
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."latitude" IS NOT NULL AND "activities"."longitude" IS NOT NULL[0m
+  ↳ app/controllers/activities_controller.rb:7
+  Rendered activities/_infowindow.html.erb (0.7ms)
+  Rendered activities/_infowindow.html.erb (0.2ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  Rendered activities/_infowindow.html.erb (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:16
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.0ms)
+
+
+  
+Algolia::AlgoliaProtocolError (Cannot reach any host: getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-dsn.algolia.net:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-3.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-1.algolianet.com:443), getaddrinfo: nodename nor servname provided, or not known (YWXQXH0AJS-2.algolianet.com:443)):
+  
+app/controllers/activities_controller.rb:16:in `index'
