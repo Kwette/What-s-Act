@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_05_31_073502) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
-    t.string "photo"
+    t.string "photo", default: "surf.jpg"
     t.index ["seller_id"], name: "index_activities_on_seller_id"
   end
 
