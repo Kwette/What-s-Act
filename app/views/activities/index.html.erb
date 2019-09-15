@@ -43,8 +43,9 @@
         <%= link_to activity_path(activity) do %>
         <% if activity.photo.blank? %>
           <div class="card-category" style="background-image:
-            url('images/Surf.jpg');
+            url('/../../../assets/images/surf.jpg');
             box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+            <%= image_tag(surf.jpg) %>
         <% else %>
           <div class="card-category" style="background-image:
             url('<%=cl_image_path activity.photo, height: 300, width: 400, crop: :fill%>');

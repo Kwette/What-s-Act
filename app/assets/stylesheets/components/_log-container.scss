@@ -1,9 +1,20 @@
+// .banner-session {
+//   background-size: cover;
+//   background-position: right;
+//   padding: 20px 0;
+//   background-image: asset-url('banner.png');
+// }
 .log-container {
   margin: 10% 25% 10% 25%;
   padding: 6% 10%;
   border: 1px solid #A1A1A1;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: white;
+  opacity: 0.9;
+  background-size: cover;
+  background-position: center;
+  background-image: asset-url('banner.png');
 }
 
 .log-container h2{
