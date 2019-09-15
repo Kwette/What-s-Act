@@ -1,5 +1,15 @@
 import mapboxgl from 'mapbox-gl';
 
+
+
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+// [...]
+if (mapElement) {
+  // [...]
+  map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
+}
+
+
 const mapElement = document.getElementById('map');
 
 const buildMap = () => {
@@ -35,5 +45,7 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
   }
 };
+
+
 export { initMapbox };
 

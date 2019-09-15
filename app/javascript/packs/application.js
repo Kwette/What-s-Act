@@ -13,3 +13,7 @@ import {topFunction} from '../components/topbutton';
 // topFunction();
 
 import "../plugins/flatpickr"
+
+
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+

@@ -1,4 +1,6 @@
 class Seller::ActivitiesController < Seller::BaseController
+  include AlgoliaSearch
+
   def index
     @activities = policy_scope(current_user.activities)
 
