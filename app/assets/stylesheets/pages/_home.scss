@@ -5,7 +5,7 @@ body{
 
 .container{
   position:relative;
-  top: 70px;
+  padding: 0;
 }
 
 .search-hp{
@@ -23,24 +23,24 @@ body{
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 20px 0;
-  height: 85vh;
+  padding: 10vh 0;
+  height: 93vh;
   background-image: asset-url('banner.png');
 }
 
 .btn-green{
  color : white;
- background-color: #77c5a7;
+ background-color: #60BF9F;
  border: none;
 }
 
 .banner h1 {
   margin: 0;
-  font-size: 3.5em;
-  font-weight: 500;
+  font-size: 3.4em;
+  font-weight: 600;
   color: #6C5EBF;
   font-family: 'Montserrat', sans-serif;
-  letter-spacing: 5px;
+  letter-spacing: 6px;
   line-height:60px;
 }
 
@@ -50,7 +50,7 @@ body{
   line-height: 2em;
   opacity: 0.7;
   font-family: 'Open Sans';
-  margin-bottom: 40px;
+  margin-bottom: 5vh;
 }
 
 .span3 {
@@ -60,110 +60,6 @@ body{
   text-align:center;
   font-weight: bold;
 }
-
-// .circle1 {
-//   position: relative;
-//   border-radius: 50%;
-//   width: 100%;
-//   height: auto;
-//   padding-top: 100%;
-//   margin-bottom: 20px;
-//   background-image : asset-url('canoe.jpg');
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   background-size: 100% 100%;
-//   background-repeat: no-repeat;
-
-// }
-
-// .circle2 {
-//   position: relative;
-//   border-radius: 50%;
-//   width: 100%;
-//   height: auto;
-//   padding-top: 100%;
-//   margin-bottom: 20px;
-//   background-image : asset-url('rando.jpg');
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   background-size: 100% 100%;
-//   background-repeat: no-repeat;
-
-// }
-
-
-// .circle3 {
-//   position: relative;
-//   border-radius: 50%;
-//   width: 100%;
-//   height: auto;
-//   padding-top: 100%;
-//   margin-bottom: 20px;
-//   background-image : asset-url('bar.jpg');
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   background-size: 100% 100%;
-//   background-repeat: no-repeat;
-
-// }
-
-
-// .red{
-//   padding: 50px;
-//   background-color:white;
-//   height:400px;
-// }
-
-
-// .one{
-//   background-color: white;
-//   height: 300px;
-//   width: 386px;
-//   margin-right: 10px;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   padding: 20px;
-//   line-height:40px;
-//   border-radius:8px;
-// }
-
-// .two{
-//   background-color: white;
-//   height: 300px;
-//   width: 386px;
-//   margin-left: 10px;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   padding: 20px;
-//   line-height: 40px;
-//   border-radius:8px;
-// }
-
-// .news{
-//   background-color: white;
-//   height: 300px;
-//   margin-right: 250px;
-//   margin-left: 250px;
-//   margin-top: 20px;
-//   margin-bottom: 20px;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   padding: 20px;
-//   padding-left: 40px;
-//   padding-right: 50px;
-//   padding-top: 40px;
-//   border-radius:8px;
-
-// }
-
-// .avis{
-//   height:150px;
-//   background-color:blue;
-// }
-
-// .avis h1{
-//   color: #6C5EBF;
-//   font-style: italic;
-//   font-weight: bold;
-//   font-size: 30px;
-//   line-height:150px;
-//   text-align:center;
-//   font-family: 'Roboto';
-// }
 
 .card-img-top{
   border-radius: 50%;
@@ -177,23 +73,8 @@ body{
   width:400px;
 }
 
-.container-news{
-  background-image: asset-url('wavyfoot.png');
-}
-
-// .travelers{
-//   height:330px;
-//   position:relative;
-//   left: 700px;
-//   bottom:246px;
-// }
-
 .list-style-none {
   list-style: none;
   padding: 20px;
 }
 
-
-.image-travelers{
-  background-image:asset-url('travelers.png');
-}

@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://branditprintit.com/wp-content/uploads/2017/04/logo-degin-logo-design-design-art-free.png" %>
+    WhatsAct
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,6 +11,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
+        <%= link_to "Home", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
         <%= link_to "New activity", new_seller_activity_path, class: "nav-link" %>
       </li>
       <li class="nav-item active">
@@ -18,7 +21,7 @@
           <%= link_to "Activities", seller_activities_path, class: "nav-link" %>
         <% end %>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <%= link_to "Bookings", seller_bookings_path, class: "nav-link" %>
       </li>
 

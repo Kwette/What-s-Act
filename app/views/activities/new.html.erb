@@ -9,7 +9,7 @@
         <%= f.input :price %>
         <%= f.input :max_participants %>
         <%= f.input :address %>
-        <%= f.input :type_activity, collection: ["Outdoor", "Indoor"] %>
+        <%= f.input :type_activity, collection: ["#Sport", "#Culture", "#Children_Friendly", "#Fun_And_Game", "#Nature", "#Beach_life", "#Eat_And_Drink", "Extreme"] %>
       </div>
          <div class="col-md-4">
            <%= f.input :start_date, as: :string, input_html: { id: "range_start" } %>

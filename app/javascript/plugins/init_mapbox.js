@@ -16,7 +16,12 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/mapbox/light-v10'
+    //  properties: {
+    //   'marker-color': '#60be9f',
+    //   'marker-size': 'large',
+    //   'marker-symbol': 'rocket'
+    // }
   });
 };
 

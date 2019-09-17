@@ -1,7 +1,14 @@
+// .card-category > a:hover{
+//   background-color: white !important;
+// }
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 3em;
+  margin: 0 auto;
+  margin-right: 7em;
+  margin-left: 7em;
+  margin-top: 3em;
 }
 
 .color_white{
@@ -10,12 +17,15 @@
 
 span {
   font-size : 12px;
+  color: #60BE9F;
+  font-weight: light;
 }
 
-.activity-title{
+.activity-title, h6{
   background-color: white;
   color: #23282E;
   padding: 5px;
+  font-weight: 500;
 }
 
 .activity-title h3 {
@@ -27,21 +37,22 @@ background-size: cover;
 background-position: center;
 min-height: 35vh;
 position : relative;
-// border-radius : 15px;
+// width: 20vw;
 }
 
 .activities_list {
-  padding-top: 10px;
+  margin-bottom: 10vh;
 }
 
 .card_bottom_info {
-  color: #23282E;
+  // color: #23282E;
+  color: #6C5EBF;
   background-color: white;
   position: absolute;
   bottom: 0px;
   width: 100%;
   font-weight: bolder;
-   margin-bottom: 0;
+  margin-bottom: 0;
   padding: 5px;
 }
 
@@ -59,6 +70,7 @@ position : relative;
 .card_bottom_info p {
   margin-bottom: 0;
   padding: 5px;
+  font-weight: 500;
 }
 
 .card-activity {
@@ -95,34 +107,34 @@ position : relative;
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
