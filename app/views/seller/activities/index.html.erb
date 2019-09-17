@@ -1,10 +1,12 @@
 
 <!-- title of page  -->
-<div class="header-container">
+<div class="header-container d-flex align-items-center">
+
+<div class="container">
 <% if params[:location] != "" && !params[:location].nil? %>
   <h1 class="text-center"> Activities in <%= params[:location] %></h1>
 <% elsif params[:location] == "" || params[:location].nil? %>
-  <h1 class="text-center mt-2em"> Your activities</h1>
+  <h1 class="text-center"> Your activities</h1>
 <% end %>
 
 <!-- search  -->
@@ -14,6 +16,7 @@
     <input type='submit' class="btn btn-green btn-lg rounded" value="FIND" style="max-height:48px;">
 
   </form>
+</div>
 </div>
 </div>
 <!-- the map -->

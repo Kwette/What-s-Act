@@ -1,36 +1,29 @@
-
-    <div class="container-new-activity">
-    <h1>New activity</h1>
-    <div class="d-flex">
-      <div class="col-md-6">
-        <%= simple_form_for @activity do |f| %>
-        <%= f.input :name %>
-        <%= f.input :description %>
-        <%= f.input :price %>
-        <%= f.input :max_participants %>
-        <%= f.input :address %>
-        <%= f.input :type_activity, collection: ["#Sport", "#Culture", "#Children_Friendly", "#Fun_And_Game", "#Nature", "#Beach_life", "#Eat_And_Drink", "Extreme"] %>
-      </div>
-         <div class="col-md-4">
-           <%= f.input :start_date, as: :string, input_html: { id: "range_start" } %>
-           <%= f.input :end_date, as: :string, input_html: {id: "range_end"} %>
-           <%= f.input :photo %>
-           <%= f.input :photo_cache, as: :hidden %>
-           <%= f.button :submit, class: "btn btn-outline-primary" %>
-        <% end %>
-
-       <!--    <div class="form-group">
-         <label>Upload Image</label>
-         <div class="input-group">
-           <span class="input-group-btn">
-             <span class="btn btn-default btn-file">
-               Upload your pictures<input type="file" id="imgInp">
-             </span>
-           </span>
-         </div>
-         <img id='img-upload'/>
-       </div>
-               </div> -->
-      </div>
+<div class="header-container d-flex justify-content-center align-items-center">
+  <div>
+    <h1 class="text-center">Add activities</h1>
+    <h2 class="text-center mb-4" style="font-size: 1.5em">Post your offer quickly below</h2>
+  </div>
+</div>
+<div class="container-new-activity">
+  <div class="d-flex">
+    <div class="col-md-4">
+      <%= simple_form_for @activity do |f| %>
+      <%= f.input :name, :label => "Title", :placeholder => 'Title here...', input_html: { class: "no-margin" } %>
+      <%= f.input :price, :placeholder => "Price", input_html: { class: "no-margin" } %>
+      <%= f.input :max_participants, :placeholder => "Number of places", input_html: { class: "no-margin" } %>
+      <%= f.input :address, :placeholder => "Adress", input_html: { class: "no-margin" } %>
+      <%= f.input :type_activity, collection: ["#Sport", "#Culture", "#Children_Friendly", "#Fun_And_Game", "#Nature", "#Beach_life", "#Eat_And_Drink", "#Extreme"] %>
     </div>
+    <div class="col-md-8">
+      <%= f.input :description , input_html: { class: "descriptionStyling" } %>
     </div>
+  </div>
+  <div class="col-md-12 d-flex justify-content-around align-items-center">
+    <%= f.input :start_date, as: :string, input_html: { id: "range_start" } %>
+    <%= f.input :end_date, as: :string, input_html: {id: "range_end"} %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+  </div>
+  <%= f.button :submit, class: "btn btn-green" %>
+  <% end %>
+</div>

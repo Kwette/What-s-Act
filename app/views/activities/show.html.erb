@@ -1,8 +1,9 @@
-<!-- ****************************** HEADER ****************************** -->
+
+<!-- ****************************** HEADER-SHOW ****************************** -->
 <div class="header-container d-flex justify-content-center align-items-center">
   <div class="owner">
     <%= image_tag 'avatar.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-    <p class="text-center"><%= @activity.seller.first_name %></p>
+    <p class="text-center" style="margin-bottom: 0"><%= @activity.seller.first_name %></p>
   </div>
   <div style="margin-right: 5vw; margin-left: 5vw;">
     <h1><%= @activity.name.capitalize %></h1>
@@ -17,16 +18,17 @@
   </div>
 </div>
 <!-- ******************************************************************** -->
-<div class="container-details h-100 d-flex justify-content-around align-items-center">
-  <div class="d-flex mb-3">
-  </div>
-  <h6 class="mb-2 text-muted"><i class="fas fa-map-marker-alt"></i> <%= @activity.address %></h6>
-  <p>Max: <%= @activity.max_participants %> <i class="fas fa-user-friends"></i></p>
+
+<div class="container-details container-page-sh d-flex justify-content-start align-items-center mb-4">
+  <h6 class="" style="color: #60be9f !important; padding: 0; margin: 0"><i class="fas fa-map-marker-alt mr-2" style="color: #60be9f"></i><%= @activity.address %></h6>
+  <p style="color: #60be9f; margin-bottom: 0; margin-left: 1em"><%= @activity.max_participants %> <i class="fas fa-user-friends"></i></p>
 </div>
-<div class="container-page-sh d-flex justify-content-between align-items-center">
-  <p style="min-height: 200px; margin-top: 20px;margin-bottom: 40px; color: black;"><%= @activity.description %></p>
+<div class="container-page-sh d-flex justify-content-between text-justify">
+  <div>
+    <p style="padding: 0 2em 0 0; color: black;"><%= @activity.description %></p>
+  </div>
   <div class="container-new-booking">
-    <div class="form-container mt-5">
+    <div class="form-container">
       <div class="header">
         <div class="header-row mb-1">
           <div class="big-bold" id="price" data-amount-cents="1"><%= @activity.price %>€</div>
@@ -34,7 +36,7 @@
         </div>
         <% if !Review.where(activity: @activity).empty? %>
         <% Review.where(activity: @activity).average(:rating).round.times do  %>
-        <i class="fas fa-star orange-color"></i>
+        <i class="fas fa-star orange-color" style="color: #60be9f"></i>
         <% end %>
         (<%= @activity.reviews.count %>)
         <% end %>
@@ -54,19 +56,23 @@
         <div>Total price:</div>
         <div id="total-price" class="mb-4 mr-4"> <strong><%= @activity.price %>€ </strong></div>
       </div>
-      <%= f.button :submit, class: 'btn btn-green btn-block' %>
+      <%= f.button :submit, value: 'BOOK', class: 'btn btn-green btn-block' %>
       <% end %>
     </div>
   </div>
 </div>
 </div>
-<!-- ************** DISPLAY ACTIVITY PICTURE **************
-<% if !@activity.photo.blank? %>
-<div class="banner-photo" style="background-image: url('<%= cl_image_path @activity.photo, height: 300, width: 1000, crop: :fill %>')"></div>
-<% else %>
-<div class="banner-photo" style="background-image: url('<%= image_tag 'surf.jpg', height: 300, width: 1000, crop: :fill %>')"></div>
-<% end %>
-******************************************************** -->
+
+<!-- ************** DISPLAY ACTIVITY PICTURE ************** -->
+<div class="container-page-sh">
+    <% if !@activity.photo.blank? %>
+    <div class="banner-photo" style="background-image: url('<%= cl_image_path @activity.photo, height: 300, width: 1000, crop: :fill %>')"></div>
+    <% else %>
+    <div class="banner-photo" style="background-image: url('<%= image_tag 'surf.jpg', height: 300, width: 1000, crop: :fill %>'); width: 100%;"></div>
+    <% end %>
+</div>
+<!-- ******************************************************** -->
+
 <div class="container-page-sh">
 <h3>Reviews</h3>
 <div class="review-create">
@@ -84,7 +90,7 @@
         <h6 class="card-subtitle mb-2 text-muted"><%= Date.today %></h6>
         <p class="card-text"><%= review.content %></p>
       </div>
-      <div class="review-stars orange-color">
+      <div class="review-stars orange-color" style="color: #60be9f">
         <p>
           <% review.rating.times do %>
           <i class="fas fa-star"></i>

@@ -1,11 +1,11 @@
 <!-- <h1 class="text-center">Activities in <%# params[:location].nil? ? return params[:location].capitalize : "all" %></h1> -->
-<div class="header-container">
+<div class="header-container d-flex align-items-center">
 <div class="container">
 <!-- title of page  -->
 <% if params[:location] != "" && !params[:location].nil? %>
-  <h1 class="text-center mt-2em"> Results for <%= params[:location] %></h1>
+  <h1 class="text-center"> Results for <%= params[:location] %></h1>
 <% elsif params[:location] == "" || params[:location].nil? %>
-  <h1 class="text-center mt-2em" style="font-weight: 600;"> All activities</h1>
+  <h1 class="text-center" style="font-weight: 600;"> All activities</h1>
 <% end %>
 
 <h2 class="text-center mb-4" style="font-size: 1.5em">Choose which activity you wanna do</h2>
