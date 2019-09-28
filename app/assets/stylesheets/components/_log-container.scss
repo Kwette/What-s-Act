@@ -5,9 +5,9 @@
 //   background-image: asset-url('banner.png');
 // }
 .log-container {
-  width: 70vw;
+  width: 60vw;
   // margin: 0% 20% 0% 20%;
-  padding: 3% 10%;
+  padding: 2em 5em;
   // border: 0.5px solid #A1A1A1;
   // border-radius: 5px;
   // box-shadow: 0 0 5px rgba(0,0,0,0.1);
@@ -49,3 +49,14 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.new_user{
+  width: 100%!important;
+}
+.sessions-links{
+  margin : 2em, 1em;
+  padding: 1em;
+  width: 100%;
+  text-transform: uppercase;
+}
+
