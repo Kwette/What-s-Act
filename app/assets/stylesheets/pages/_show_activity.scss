@@ -2,12 +2,13 @@
   margin: 0px 170px;
 }
 .form-container {
-  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 1px rgba(1,1,1,0.2);
   background-color: white;
   padding: 30px;
   // width: 350px;
   margin: 0 auto;
-  border: 1px solid rgba(150,150,150,0.2);
+  border: 1px solid rgba(96,190,159,0.3);
+  border-radius: 3px;
 }
 .header {
   margin-bottom: 20px;
@@ -20,6 +21,7 @@
   font-weight: bold;
   font-size: 24px;
   margin-right: 5px;
+  opacity: 0.7;
 }
 .small-light {
   font-size: 12px;
@@ -34,9 +36,10 @@
 }
 #counter {
   margin: 0 15px;
+  color: #848484;
 }
 .round-bordered {
-  border: 1px solid #5a5a5a;
+  border: 1px solid #848484;
   border-radius: 50%;
   width: 35px;
   font-size: 18px;
@@ -44,21 +47,22 @@
   height: 35px;
   padding: 3px
 }
-.orange-color {
-  color: #EC6423;
-}
 .cards-reviews {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2em;
+  margin: 2em 5em;
 }
 .banner-photo {
   background-size: cover;
+  // background-position: left;
   background-position: center;
-
+  height: 60vh;
+  margin-top: 3em;
+  //border-radius: 5px;
 }
 .container-details{
-  margin-top: 2em;
+  margin-top: 3em;
 }
 .owner img {
   width: 7em;
@@ -69,10 +73,88 @@
 }
 #total-price{
   font-size: 18px;
+  opacity: 0.7;
 }
 .red-color{
   color: red;
 }
 .green-color{
   color: green;
+}
+#form-review{
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  padding: 2em;
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  &:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+.review-create > a{
+  color: white;
+  margin: 1em;
+  padding: 1em;
+}
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+  &:hover {
+    color: black;
+  }
+}
+input.datepicker, .booking_date{
+  text-align: right;
+}
+label.form-control-label.string.optional{
+  width: 200%;
+}
+.card{
+  border: 1px solid rgba(108, 94, 191, 0.2);
+  padding: 1.5em;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards-reviews {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards-reviews {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 900px) {
+  .cards-reviews {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 1350px) {
+  .cards-reviews {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1700px) {
+  .cards-reviews {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }

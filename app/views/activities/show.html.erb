@@ -1,9 +1,9 @@
-
+<div class="d-flex flex-grow flex-column">
 <!-- ****************************** HEADER-SHOW ****************************** -->
 <div class="header-container d-flex justify-content-center align-items-center">
   <div class="owner">
     <%= image_tag 'avatar.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-    <p class="text-center" style="margin-bottom: 0"><%= @activity.seller.first_name %></p>
+    <p class="text-center" style="margin-bottom: 0"><%= @activity.seller.first_name.capitalize %></p>
   </div>
   <div style="margin-right: 5vw; margin-left: 5vw;">
     <h1><%= @activity.name.capitalize %></h1>
@@ -14,19 +14,21 @@
       <p>To <%= @activity.end_date.strftime("%Y-%d-%m") %></p>
     </div>
     <% end %>
-    <h4><%= @activity.type_activity %></h4>
+    <h4 class="btn btn-green" style="text-transform: uppercase; padding: 0.8em; font-size: 1em;" ><%= @activity.type_activity %></h4>
   </div>
 </div>
-<!-- ******************************************************************** -->
-
-<div class="container-details container-page-sh d-flex justify-content-start align-items-center mb-4">
-  <h6 class="" style="color: #60be9f !important; padding: 0; margin: 0"><i class="fas fa-map-marker-alt mr-2" style="color: #60be9f"></i><%= @activity.address %></h6>
+<!-- ************************************************************************ -->
+<!-- ************************* ACTIVITY DESCRIPTION ************************* -->
+<div class="container-details container-page-sh d-flex justify-content-start align-items-center">
+  <h6 class="" style="color: #60be9f !important; margin-bottom: 0"><i class="fas fa-map-marker-alt mr-2" style="color: #60be9f"></i><%= @activity.address %></h6>
   <p style="color: #60be9f; margin-bottom: 0; margin-left: 1em"><%= @activity.max_participants %> <i class="fas fa-user-friends"></i></p>
 </div>
-<div class="container-page-sh d-flex justify-content-between text-justify">
+<div class="container-page-sh d-flex justify-content-between text-justify align-items-center">
   <div>
-    <p style="padding: 0 2em 0 0; color: black;"><%= @activity.description %></p>
+    <p style="padding: 0 2em 0 0; color: black; opacity: 0.7; font-family: 'Open Sans', sans-serif; overflow: scroll; height: 50vh; min-width: 40vw;"><%= @activity.description %></p>
   </div>
+<!-- ************************************************************************ -->
+<!-- **************************** NEW BOOKING **************************** -->
   <div class="container-new-booking">
     <div class="form-container">
       <div class="header">
@@ -42,7 +44,9 @@
         <% end %>
       </div>
       <%= simple_form_for([@activity, @booking]) do |f| %>
+      <div class="d-flex justify-content-between">
       <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker", value: @activity.start_date} %>
+      </div>
       <div class="flex-between mt-4">
         Participants:
         <div class="actions">
@@ -56,62 +60,72 @@
         <div>Total price:</div>
         <div id="total-price" class="mb-4 mr-4"> <strong><%= @activity.price %>€ </strong></div>
       </div>
-      <%= f.button :submit, value: 'BOOK', class: 'btn btn-green btn-block' %>
+      <%= f.button :submit, value: 'BOOK', class: 'btn btn-green btn-block', style: 'padding: 0.6em' %>
       <% end %>
     </div>
   </div>
 </div>
 </div>
-
-<!-- ************** DISPLAY ACTIVITY PICTURE ************** -->
-<div class="container-page-sh">
-    <% if !@activity.photo.blank? %>
-    <div class="banner-photo" style="background-image: url('<%= cl_image_path @activity.photo, height: 300, width: 1000, crop: :fill %>')"></div>
-    <% else %>
-    <div class="banner-photo" style="background-image: url('<%= image_tag 'surf.jpg', height: 300, width: 1000, crop: :fill %>'); width: 100%;"></div>
-    <% end %>
-</div>
-<!-- ******************************************************** -->
-
-<div class="container-page-sh">
-<h3>Reviews</h3>
-<div class="review-create">
-  <a href="#form-review">Leave a review</a>
-</div>
-<% if @activity.reviews == [] %>
-<p>Be the first to leave a riview</p>
+<!-- ************************ DISPLAY ACTIVITY PICTURE *********************** -->
+<% if !@activity.photo.blank? %>
+<div class="banner-photo" style="background-image: url('<%= cl_image_path @activity.photo, height: 1000, width: 1100, crop: :fill %>')"></div>
 <% else %>
-<div class="cards-reviews">
-  <% @activity.reviews.each do |review| %>
-  <div class="card my-2" style="width: auto;">
-    <div class="card-body d-flex justify-content-between">
-      <div class="review-content">
-        <h5 class="card-title"><%= current_user.first_name %></h5>
-        <h6 class="card-subtitle mb-2 text-muted"><%= Date.today %></h6>
-        <p class="card-text"><%= review.content %></p>
-      </div>
-      <div class="review-stars orange-color" style="color: #60be9f">
-        <p>
-          <% review.rating.times do %>
-          <i class="fas fa-star"></i>
-          <% end %>
-        </p>
-      </div>
+<div class="banner-photo" style="background-image: url('<%= image_tag 'surf.jpg', height: 1000, width: 1100, crop: :fill %>')"></div>
+<% end %>
+
+<!-- ********************************* REVIEWS ******************************* -->
+
+
+<div class="header-container middle-header d-flex justify-content-center align-items-center flex-column mt-4" style="margin-top: inherit;">
+<!-- *************************** POST REVIEWS MODAL ************************** -->
+  <div class="row d-flex justify-content-center">
+    <div id="form-review" class="col-12 col-md-6 mt-5">
+      <a href="#" title="Close" class="modal-close">Close</a>
+      <h4 style="color: black; opacity: 0.7">Leave your review</h4>
+      <%= simple_form_for([@activity, @review]) do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating, collection: [1, 2, 3, 4, 5] %>
+      <%= f.button :submit, value: 'POST REVIEW', class: "btn btn-green" %>
+      <% end %>
     </div>
   </div>
-  <% end %>
+<!-- ************************************************************************* -->
+<h1>Reviews</h1>
+<div class="review-create">
+  <a href="#form-review" class="btn btn-green">LEAVE A REVIEW</a>
 </div>
-<% end %>
-<div class="row">
-  <div id="form-review" class="col-12 col-md-6 mt-5">
-    <h4>Leave your review</h4>
-    <%= simple_form_for([@activity, @review]) do |f| %>
-    <%= f.input :content %>
-    <%= f.input :rating, collection: [1, 2, 3, 4, 5] %>
-    <%= f.button :submit, class: "btn btn-green" %>
-    <% end %>
+</div>
+
+<% if @activity.reviews == [] %>
+<p style="background-color: #6c5ebf; text-align: center; font-size: 1.5em; padding-bottom: 2em; color: white; margin-bottom: 1em">No reviews yet. Be the first to leave one !</p>
+<% else %>
+<div class="cards-reviews">
+<% @activity.reviews.each do |review| %>
+<div class="card my-2" style="width: auto;">
+  <div class="card-body">
+    <div class="review-content d-flex justify-content-between">
+      <div class="review-stars" style="color: #60be9f">
+          <p>
+            <% review.rating.times do %>
+            <i class="fas fa-star"></i>
+            <% end %>
+          </p>
+        </div>
+      <h5 class="card-title"><%= current_user.first_name.capitalize %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= Date.today %></h6>
+
+    </div>
+    <p class="card-text"><%= review.content %></p>
+
+
+
+
   </div>
 </div>
+<% end %>
 </div>
+<% end %>
+</div>
+<!-- ************************************************************************* -->
 </div>
 <%= javascript_pack_tag 'plusminus' %>
