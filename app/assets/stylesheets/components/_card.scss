@@ -5,10 +5,11 @@
   overflow: hidden;
   height: 150px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(96, 190, 159, 0.2);
   display: flex;
   align-items: center;
   padding: 7px;
+  border-radius: 4px;
 }
 
 .card-product img {

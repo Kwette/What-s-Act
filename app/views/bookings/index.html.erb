@@ -1,7 +1,9 @@
-
+<!-- ****************************** HEADER-SHOW ****************************** -->
+<div class="header-container mini-header d-flex justify-content-around align-items-center">
+  <h2 style="">Bookings (<%= @bookings.count %>)</h2>
+</div>
+<!-- ************************************************************************* -->
 <div class="container p-4 booking-height">
-  <h3 class='mb-4 mt-2em'>Bookings (<%= @bookings.count %>)</h3>
-
 <% @bookings.each do |booking| %>
 <div class="card-product card-product-margin-content">
   <%= cl_image_tag booking.activity.photo, height: 300, width: 400, crop: :fill %>
@@ -14,7 +16,7 @@
     </div>
   </div>
 
-  <p><%= link_to "Contact owner", new_booking_message_path(booking), class: 'btn btn-outline-success mr-3'%></p>
+  <p><%= link_to "Contact owner", new_booking_message_path(booking), class: 'btn btn-green mr-3'%></p>
 
   <div class="card-product-status">
     <h2>
