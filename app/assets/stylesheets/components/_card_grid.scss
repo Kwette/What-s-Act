@@ -9,6 +9,7 @@
   margin-right: 7em;
   margin-left: 7em;
   margin-top: 3em;
+  border-radius: 14px !important;
 }
 
 .color_white{
@@ -16,16 +17,18 @@
 }
 
 span {
-  font-size : 12px;
+  font-size : 0.7em;
   color: #60BE9F;
   font-weight: light;
 }
 
-.activity-title, h6{
-  background-color: white;
-  color: #23282E;
-  padding: 5px;
+.activity-title, h5{
+  background-color: #6C5EBF;
+  color: white;
+  padding: 7px;
   font-weight: 500;
+  border-radius: 4px 4px 0px 0px;
+  margin-bottom: 0;
 }
 
 .activity-title h3 {
@@ -37,7 +40,7 @@ background-size: cover;
 background-position: center;
 min-height: 35vh;
 position : relative;
-// width: 20vw;
+border-radius: 4px;
 }
 
 .activities_list {
@@ -45,15 +48,15 @@ position : relative;
 }
 
 .card_bottom_info {
-  // color: #23282E;
-  color: #6C5EBF;
-  background-color: white;
+  color: white;
+  background-color: #6C5EBF;
   position: absolute;
   bottom: 0px;
   width: 100%;
   font-weight: bolder;
   margin-bottom: 0;
-  padding: 5px;
+  padding: 3px;
+  border-radius: 0px 0px 4px 4px;
 }
 
 #nb-people {

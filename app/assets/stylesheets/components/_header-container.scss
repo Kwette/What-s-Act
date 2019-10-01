@@ -1,9 +1,9 @@
 .header-container{
   background-color: #6C5EBF;
-  height: 35vh;
+  height: 33vh;
   letter-spacing: 3px;
   color: white;
-  margin-top: 3.8em;
+  margin-top: 3.1em;
 }
 
 .mini-header{
@@ -11,4 +11,7 @@
 }
 .middle-header{
   height: 30vh;
+}
+.header-container h1{
+  font-weight: 600;
 }
