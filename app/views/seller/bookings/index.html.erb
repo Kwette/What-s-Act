@@ -10,32 +10,43 @@
   <% @bookings.each do |booking| %>
   <div class="card-product card-product-margin-content">
     <%= cl_image_tag booking.activity.photo, height: 300, width: 400, crop: :fill %>
-    <div class="card-product-infos">
-      <h2><%= booking.activity.name %></h2>
+      <div class="card-product-infos">
+        <div class="d-flex align-items-center">
+          <h2><%= booking.activity.name.upcase %></h2>
+           <p class="ml-3" style="margin-bottom: 20px">
+             <%= link_to "Contact buyer", new_booking_message_path(booking), class: 'btn btn-green mr-2' %>
+            </p>
+            <% if booking.status == "pending" %>
+              <div class="d-flex">
+                <p  style="margin-bottom: 20px"><%= link_to "Confirm", confirmed_seller_booking_path(booking), method: :patch, class: 'btn btn-confirm mr-2' %></p>
+                <p  style="margin-bottom: 20px"> <%= link_to "Decline", decline_seller_booking_path(booking), method: :patch, class: 'btn btn-decline mr-2' %></p>
 
-
-      <div class="card-product-infos-details">
-        <p>Date: <%= booking.date.strftime("%Y-%d-%m") %></p>
-        <p> <%= booking.participants_number %> <i class="fas fa-user-friends"></i></p>
-        <p> Total price: <%= booking.total_price %>€</p>
-      </div>
+              </div>
+            <% end %>
+        </div>
+        <div class="card-product-infos-details">
+          <p><i class="fas fa-calendar-day"></i> <%= booking.date.strftime("%Y-%d-%m") %></p>
+          <p><i class="fas fa-users"></i> <%= booking.participants_number %></p>
+          <p><i class="far fa-credit-card"></i><%= booking.total_price %>€</p>
+        </div>
     </div>
-    <div class="card-product-status align-items-center">
+    <div class="card-product-status d-flex flex-column flex-grow-1">
+      <p> <%= link_to "View activity", seller_activity_path(booking.activity), class: 'btn btn-green' %></p>
       <h2>
       <% if booking.status == "pending" %>
-      <div class="confirmation-buttons d-flex">
-        <%= link_to "Contact buyer", new_booking_message_path(booking), class: 'btn btn-green mr-2' %>
-        <%= link_to "Confirm", confirmed_seller_booking_path(booking), method: :patch, class: 'btn btn-green mr-2' %>
-        <%= link_to "Decline", decline_seller_booking_path(booking), method: :patch, class: 'btn btn-green mr-2' %>
-      </div>
+        <i class="fas fa-hourglass-half" style="color:#6c5ebf;"></i>
+        <%= booking.status.capitalize %>
+
       <% elsif booking.status == "accepted" %>
-      <%= link_to "Contact buyer", new_booking_message_path(booking), class: 'btn btn-green mr-2' %>
-      <i class="fas fa-check green-color"></i>
+      <div>
+      <i class="fas fa-check" style="color:#5fbf9e; font-weight: bolder"></i>
       <%= booking.status.capitalize %>
+      </div>
       <% else %>
-      <%= link_to "Contact buyer", new_booking_message_path(booking), class: 'btn btn-green mr-2' %>
-      <i class="far fa-times-circle red-color"></i>
-      <%= booking.status.capitalize %>
+      <div>
+        <i class="far fa-times-circle" style="color:red; font-size: 1.2em; font-weight: 500"></i>
+        <%= booking.status.capitalize %>
+      </div>
       <% end %>
       </h2>
     </div>

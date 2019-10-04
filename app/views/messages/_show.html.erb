@@ -1,10 +1,24 @@
  <% if message.sender == current_user  %>
-  <div class="message-box sender-box d-flex justify-content-between">
+  <div class="message-box sender-box">
+    <span>From :
+      <% if current_user == message.booking.activity.seller %>
+      <%= message.booking.activity.seller.first_name %>
+      <% else %>
+      <%= current_user.first_name %>
+      <% end %>
+      </span>
     <p><%= message.content %></p>
     <p class="message-date"><%= message.date.strftime("%Y-%d-%m") %> <%= message.date.strftime("at %I:%M%p") %></p>
   </div>
 <% else %>
-  <div class="message-box receiver-box d-flex justify-content-between">
+  <div class="message-box receiver-box">
+    <span>From :
+      <% if current_user.first_name == message.booking.activity.seller.first_name %>
+      <%= message.booking.activity.seller.first_name %>
+      <% else %>
+      <%= current_user.first_name %>
+      <% end %>
+      </span>
     <p><%= message.content %></p>
       <p class="message-date"><%= message.date.strftime("%Y-%d-%m") %><%= message.date.strftime("at %I:%M%p") %></p>
   </div>

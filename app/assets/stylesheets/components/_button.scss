@@ -22,11 +22,23 @@
  text-transform: uppercase;
 }
 .btn-confirm{
+ color : #2C77AB;
+ border: 1px solid #2C77AB;
+ border-radius: 3px;
+ transition: background 0.6s ease;
+}
+.btn-confirm:hover{
  color : white;
  background-color: #2C77AB;
  border: none;
 }
 .btn-decline{
+ color : #EA474A;
+ border: 1px solid #EA474A;
+ border-radius: 3px;
+ transition: background 0.6s ease;
+}
+.btn-decline:hover{
  color : white;
  background-color: #EA474A;
  border: none;

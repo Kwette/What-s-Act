@@ -1,7 +1,11 @@
+<div class="header-container mini-header d-flex justify-content-around align-items-center">
+  <h1 style="">Messages (<%= @messages.count %>)</h1>
+</div>
 <div class="container-message">
-  <h1>Messages</h1>
+   <%= @booking.activity.name %>
   <div class="message-inside" id="messages">
     <% @messages.each do |message| %>
+
      <%= render 'show', message: message %>
     <% end %>
   </div>

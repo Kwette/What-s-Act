@@ -1,8 +1,3 @@
-// .container{
-//   display: flex;
-//   justify-content: space-around;
-// }
-
 .left{
   background-color: red;
 }
@@ -27,8 +22,13 @@
 .without-label label{
  display: none;
 }
+.display-label label{
+  display: block;
+  margin: 0em 1em;
+  text-transform: uppercase;
+}
 .without-label input, .without-label select{
- width: 20vw;
+  width: 20vw;
 }
  .upload_button_holder{
     position: relative;

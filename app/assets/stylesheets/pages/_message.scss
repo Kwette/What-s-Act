@@ -1,10 +1,11 @@
 .container-message{
-margin: 20px 300px 0px 300px;
-padding: 30px 100px;
-height: 85vh;
-border: 1px solid #2F0197;
+margin: 5vh 15vw;
+padding: 5vw;
+min-height: 52vh;
+border: 1px solid rgba(96, 190, 159, 0.3);
+box-shadow: 0 0 15px rgba(96, 190, 159, 0.3);
 position: relative;
-border-radius: 5px;
+border-radius: 4px;
 }
 .form-message{
   position: absolute;
@@ -16,24 +17,26 @@ padding: 30px 100px;
 position: relative;
 }
 .message-box{
-  max-width: 60%;
   padding: 10px 20px 10px 23px;
   min-width: 25%;
   border-radius: 25px;
   margin-bottom: 5px;
 }
+.message-box > span{
+  color: black;
+  font-size: 0.9em;
+  opacity: 0.5;
+}
 .message-box p{
   margin-bottom: 0px;
 }
 .sender-box{
-  //position: sticky;
-  //right: 10;
-  background-color: #A8C5DD;
+  background-color: rgba(96, 190, 159, 0.3);
 }
 .receiver-box{
   //position: sticky;
   //left: 10;
-  background-color: #F1F1F1;
+  background-color: rgba(108, 94, 191, 0.3);
 }
 p.message-date{
   color: rgba(0,0,0,0.3);

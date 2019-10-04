@@ -8,27 +8,37 @@
 <div class="card-product card-product-margin-content">
   <%= cl_image_tag booking.activity.photo, height: 300, width: 400, crop: :fill %>
   <div class="card-product-infos">
-    <h2><%= booking.activity.name.capitalize %></h2>
+    <div class="d-flex align-items-center">
+    <h2><%= booking.activity.name.upcase %></h2>
+    <p class="ml-3" style="margin-bottom: 20px"><%= link_to "Contact owner", new_booking_message_path(booking), class: 'btn btn-green mr-3'%>
+
+     <!--  <%= image_tag 'avatar.png', class: "avatar ", style: 'width: 5%;' %>
+      <%= booking.activity.seller.first_name.capitalize %> -->
+    </p>
+
+  </div>
+
+
     <div class="card-product-infos-details">
-    <p>Date: <%= booking.date.strftime("%Y-%d-%m") %></p>
-    <p> <%= booking.participants_number %> <i class="fas fa-user-friends"></i></p>
-    <p> Total price: <strong><%= booking.total_price %>€</strong></p>
+    <p><i class="fas fa-calendar-day"></i> <%= booking.date.strftime("%Y-%d-%m") %></p>
+    <p><i class="fas fa-users"></i> <%= booking.participants_number %></p>
+    <p><i class="far fa-credit-card"></i><%= booking.total_price %>€</p>
     </div>
   </div>
 
-  <p><%= link_to "Contact owner", new_booking_message_path(booking), class: 'btn btn-green mr-3'%></p>
 
-  <div class="card-product-status">
+
+  <div class="card-product-status d-flex flex-column flex-grow-1">
+    <p> <%= link_to "View activity", activity_path(booking.activity), class: 'btn btn-green' %></p>
     <h2>
       <% if booking.status == "pending" %>
-      <i class="fas fa-hourglass-half" style="color:#EC6423;"></i>
+      <i class="fas fa-hourglass-half" style="color:#6c5ebf;"></i>
       <% elsif booking.status == "accepted" %>
-        <i class="fas fa-check" style="color:#4EAF50;"></i>
+        <i class="fas fa-check" style="color:#5fbf9e; font-weight: bolder"></i>
         <% else %>
-        <i class="far fa-times-circle" style="color:#B00E23;"></i>
+        <i class="far fa-times-circle" style="color:red; font-size: 1.2em; font-weight: 500"></i>
       <% end %>
       <%= booking.status.capitalize %></h2>
-      <p> <%= link_to "View activity", activity_path(booking.activity) %></p>
   </div>
 </div>
 <% end %>
