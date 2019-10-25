@@ -10,7 +10,7 @@
 <% activity_name_array = activity_name_array.uniq %>
 
 <% activity_name_array.each do |name| %>
-  <%= link_to "##{name.capitalize} Bookings", seller_bookings_path(:name=>name), class: 'btn btn-green mr-2' %>
+  <%= link_to "##{name.capitalize}", seller_bookings_path(:name=>name), class: 'btn btn-green mr-2' %>
 <% end %>
 
 <%= link_to "All Bookings", seller_bookings_path, class: 'btn btn-green mr-2' %>
