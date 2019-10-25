@@ -41,6 +41,7 @@ class ActivitiesController < ApplicationController
     authorize @activity
     @booking = Booking.new
     @review = Review.new
+    @activity.max_participants = @activity.max_participants.to_i - @booking.participants_number.to_i
   end
 
 

@@ -18,9 +18,12 @@ Rails.application.routes.draw do
 
     resources :activities, only: [:index, :new, :create, :show, :destroy]
     resources :bookings, only: [ :index ] do
-     member do
-         patch :confirmed
-         patch :decline
+      collection do
+          get :cruise_filter
+      end
+      member do
+          patch :confirmed
+          patch :decline
       end
     end
   end

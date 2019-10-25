@@ -1,8 +1,25 @@
 <!-- ****************************** HEADER-SHOW ****************************** -->
-<div class="header-container mini-header d-flex justify-content-around align-items-center">
-  <h1 style="">Bookings (<%= @bookings.count %>)</h1>
+<div class="header-container mini-header d-flex justify-content-around align-items-center flex-column">
+  <h1 style="">Bookings <span style="font-size: 0.5em; color : white">(<%= @bookings.count %>)</span></h1> 
+<!-- ******************************** FILTERS ******************************** -->
+<div>
+  <% activity_name_array = [] %>
+  <% @bookings.each do |booking| %> 
+    <% activity_name_array << booking.activity.name %> 
+  <% end %>
+<% activity_name_array = activity_name_array.uniq %>
+
+<% activity_name_array.each do |name| %>
+  <%= link_to "##{name.capitalize} Bookings", seller_bookings_path(:name=>name), class: 'btn btn-green mr-2' %>
+<% end %>
+
+<%= link_to "All Bookings", seller_bookings_path, class: 'btn btn-green mr-2' %>
 </div>
-<!-- ************************************************************************* -->
+<!-- ***************************** END FILTERS ****************************************** -->
+</div>
+<!-- ***************************** END HEADER ******************************************** -->
+
+<!-- *********************************** BOOKINGS BODY *********************************** -->
 <div class="container p-4 booking-height">
   <% if @bookings == [] %>
   <p>You don't have any bookings yet</p>
@@ -54,3 +71,4 @@
   <% end %>
   <% end %>
 </div>
+<!-- ******************************** END ******************************** -->

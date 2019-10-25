@@ -19,4 +19,8 @@ class BookingPolicy < ApplicationPolicy
   def decline?
     true
   end
+
+  def cruise_filter?
+    return true
+  end
 end

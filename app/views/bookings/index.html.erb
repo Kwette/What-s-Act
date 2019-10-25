@@ -1,10 +1,27 @@
 <!-- ****************************** HEADER-SHOW ****************************** -->
-<div class="header-container mini-header d-flex justify-content-around align-items-center">
-  <h1 style="">Bookings (<%= @bookings.count %>)</h1>
+<div class="header-container mini-header d-flex justify-content-around align-items-center flex-column">
+  <h1 style="">Bookings <span style="font-size: 0.5em; color : white">(<%= @bookings.count %>)</span></h1> 
+<!-- ******************************** FILTERS ******************************** -->
+<div>
+  <% activity_name_array = [] %>
+  <% @bookings.each do |booking| %> 
+    <% activity_name_array << booking.activity.name %> 
+  <% end %>
+<% activity_name_array = activity_name_array.uniq %>
+
+<% activity_name_array.each do |name| %>
+  <%= link_to "##{name.capitalize} Bookings", bookings_path(:name=>name), class: 'btn btn-green mr-2' %>
+<% end %>
+
+<%= link_to "All Bookings", bookings_path, class: 'btn btn-green mr-2' %>
 </div>
-<!-- ************************************************************************* -->
+<!-- ***************************** END FILTERS ****************************************** -->
+</div>
+<!-- ***************************** END HEADER ******************************************** -->
+
 <div class="container p-4 booking-height">
-<% @bookings.each do |booking| %>
+
+  <% @bookings.each do |booking| %>
 <div class="card-product card-product-margin-content">
   <%= cl_image_tag booking.activity.photo, height: 300, width: 400, crop: :fill %>
   <div class="card-product-infos">
@@ -25,7 +42,6 @@
     <p><i class="far fa-credit-card"></i><%= booking.total_price %>€</p>
     </div>
   </div>
-
 
 
   <div class="card-product-status d-flex flex-column flex-grow-1">

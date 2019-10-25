@@ -34,6 +34,7 @@ class Seller::ActivitiesController < Seller::BaseController
     authorize @activity
     @booking = Booking.new
     @review = Review.new
+    @activity.max_participants -= @booking.participants_number.to_i
   end
 
 
@@ -48,7 +49,7 @@ class Seller::ActivitiesController < Seller::BaseController
 
 
   def activity_params
-    params.require(:activity).permit(:name, :address, :price, :type_activity, :description, :max_participants, :location, :latitude, :longitude, :photo, :start_date, :end_date)
+    params.require(:activity).permit(:name.capitalize, :address, :price, :type_activity, :description, :max_participants, :location, :latitude, :longitude, :photo, :start_date, :end_date)
   end
 
 end
