@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @activities = Activity.where.not(latitude: nil, longitude: nil)
+    @activities = Activity.where.not(latitude: nil, longitude: nil)    
 
     @markers = @activities.map do |activity|
       {
@@ -41,7 +41,6 @@ class ActivitiesController < ApplicationController
     authorize @activity
     @booking = Booking.new
     @review = Review.new
-    @activity.max_participants = @activity.max_participants.to_i - @booking.participants_number.to_i
   end
 
 
