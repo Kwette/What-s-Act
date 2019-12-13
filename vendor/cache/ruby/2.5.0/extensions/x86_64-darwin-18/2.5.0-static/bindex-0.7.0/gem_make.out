@@ -1,0 +1,15 @@
+current directory: /Users/Ordinateur/code/Kwette/What-s-Act/vendor/cache/ruby/2.5.0/gems/bindex-0.7.0/ext/skiptrace
+/Users/Ordinateur/.rbenv/versions/2.5.3/bin/ruby -r ./siteconf20191213-31100-fm9o6f.rb extconf.rb
+creating Makefile
+
+current directory: /Users/Ordinateur/code/Kwette/What-s-Act/vendor/cache/ruby/2.5.0/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/Ordinateur/code/Kwette/What-s-Act/vendor/cache/ruby/2.5.0/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/cruby.bundle
+
+current directory: /Users/Ordinateur/code/Kwette/What-s-Act/vendor/cache/ruby/2.5.0/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20191213-31100-dzi2yd/skiptrace

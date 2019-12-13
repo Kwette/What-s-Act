@@ -1,0 +1,13 @@
+current directory: /Users/Ordinateur/code/Kwette/What-s-Act/vendor/cache/ruby/2.5.0/gems/json-2.2.0/ext/json
+/Users/Ordinateur/.rbenv/versions/2.5.3/bin/ruby -r ./siteconf20191213-31100-169yb8t.rb extconf.rb
+creating Makefile
+
+current directory: /Users/Ordinateur/code/Kwette/What-s-Act/vendor/cache/ruby/2.5.0/gems/json-2.2.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/Ordinateur/code/Kwette/What-s-Act/vendor/cache/ruby/2.5.0/gems/json-2.2.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/Ordinateur/code/Kwette/What-s-Act/vendor/cache/ruby/2.5.0/gems/json-2.2.0/ext/json
+make "DESTDIR=" install
