@@ -1,11 +1,11 @@
 <!-- ****************************** HEADER-SHOW ****************************** -->
 <div class="header-container mini-header d-flex justify-content-around align-items-center flex-column">
-  <h1 style="">Bookings <span style="font-size: 0.5em; color : white">(<%= @bookings.count %>)</span></h1> 
+  <h1 style="">Bookings <span style="font-size: 0.5em; color : white">(<%= @bookings.count %>)</span></h1>
 <!-- ******************************** FILTERS ******************************** -->
 <div>
   <% activity_name_array = [] %>
-  <% @bookings.each do |booking| %> 
-    <% activity_name_array << booking.activity.name %> 
+  <% @bookings.each do |booking| %>
+    <% activity_name_array << booking.activity.name %>
   <% end %>
 <% activity_name_array = activity_name_array.uniq %>
 
@@ -33,7 +33,7 @@
     <p class="ml-3" style="margin-bottom: 20px"><%= link_to "Contact owner", new_booking_message_path(booking), class: 'btn btn-green mr-3'%>
 
      <!--  <%= image_tag 'avatar.png', class: "avatar ", style: 'width: 5%;' %>
-      <%= booking.activity.seller.first_name.capitalize %> -->
+      <%= booking.activity.seller.pseudo.capitalize %> -->
     </p>
 
   </div>

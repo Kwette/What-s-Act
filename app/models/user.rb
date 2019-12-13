@@ -7,7 +7,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable,
          omniauth_providers: %i[facebook google]
-  validates :phone, :email, presence: true
+  validates :pseudo, :email, presence: true
   validates :email, format: { with: /[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)/ }
-  validates :email, uniqueness: true
+  validates :pseudo, :email, uniqueness: true
 end

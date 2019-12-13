@@ -13,8 +13,8 @@
 <% else %>
   <div class="message-box receiver-box">
     <span>From :
-      <% if current_user.first_name == message.booking.activity.seller.first_name %>
-      <%= message.booking.activity.seller.first_name %>
+      <% if current_user.pseudo == message.booking.activity.seller.pseudo %>
+      <%= message.booking.activity.seller.pseudo %>
       <% else %>
       <%= current_user.first_name %>
       <% end %>

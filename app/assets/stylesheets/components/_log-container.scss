@@ -4,10 +4,15 @@
 //   padding: 20px 0;
 //   background-image: asset-url('banner.png');
 // }
+
+.incription-container{
+  min-height: 55vh;
+}
 .log-container {
   width: 60vw;
   // margin: 0% 20% 0% 20%;
   padding: 2em 5em;
+  min-height: 55vh;
   // border: 0.5px solid #A1A1A1;
   // border-radius: 5px;
   // box-shadow: 0 0 5px rgba(0,0,0,0.1);

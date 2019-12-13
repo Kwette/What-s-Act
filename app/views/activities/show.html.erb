@@ -3,7 +3,7 @@
 <div class="header-container d-flex justify-content-center align-items-center">
   <div class="owner">
     <%= image_tag 'avatar.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-    <p class="text-center" style="margin-bottom: 0"><%= @activity.seller.first_name.capitalize %></p>
+    <p class="text-center" style="margin-bottom: 0"><%= @activity.seller.pseudo.capitalize %></p>
   </div>
   <div style="margin-right: 5vw; margin-left: 5vw;">
     <h1><%= @activity.name.capitalize %></h1>
@@ -22,8 +22,8 @@
 <div class="container-details container-page-sh d-flex justify-content-start align-items-center">
   <h6 class="" style="color: #60be9f !important; margin-bottom: 0"><i class="fas fa-map-marker-alt mr-2" style="color: #60be9f"></i><%= @activity.address %></h6>
   <p style="color: #60be9f; margin-bottom: 0; margin-left: 1em; "><i class="fas fa-user-friends mr-2"></i><%= @activity.max_participants %></p>
-  
-  
+
+
 </div>
 <div class="container-page-sh d-flex justify-content-between text-justify align-items-center">
   <div>
@@ -113,7 +113,7 @@
             <% end %>
           </p>
         </div>
-      <h6 class="card-title"><%= current_user.first_name.capitalize %></h6>
+      <h6 class="card-title"><%= current_user.pseudo.capitalize %></h6>
       <h6 class="card-subtitle mb-2 text-muted"><%= Date.today %></h6>
 
     </div>

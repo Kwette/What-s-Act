@@ -1,24 +1,15 @@
 <div class="header-container mini-header d-flex align-items-center justify-content-center">
   <h2>Sign up</h2>
 </div>
-<div class="d-flex align-items-center justify-content-center mt-4 mb-4">
+<div class="inscription-container d-flex align-items-center justify-content-center mt-4 mb-4">
   <div class="log-container d-flex justify-content-between">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs">
-      <%= f.input :first_name,
-      autofocus: true,
-      input_html: { autocomplete: "First name" }%>
-      <%= f.input :last_name,
-      autofocus: true,
-      input_html: { autocomplete: "Last name" }%>
-      <%= f.input :address,
-      autofocus: true,
-      input_html: { autocomplete: "Address" }%>
-      <%= f.input :phone,
+      <%= f.input :pseudo,
       required: true,
       autofocus: true,
-      input_html: { autocomplete: "Phone number" }%>
+      input_html: { autocomplete: "Pseudo" }%>
       <%= f.input :email,
       required: true,
       autofocus: true,
