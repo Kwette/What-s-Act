@@ -5,3 +5,4 @@
 # Ignore application configuration
 /config/application.yml
 BUNDLE_PATH: "vendor/cache"
+GEM_PATH=vendor/bundle/ruby/2.5.0
