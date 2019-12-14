@@ -4,4 +4,4 @@
 
 # Ignore application configuration
 /config/application.yml
-.bundle/config
+BUNDLE_PATH: "vendor/cache"
