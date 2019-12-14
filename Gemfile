@@ -36,7 +36,7 @@ gem 'geocoder'
 gem 'pundit'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
-gem "algoliasearch-rails"
+gem 'algoliasearch-rails'
 
 gem 'figaro'
 gem 'nokogiri', '~> 1.10.4'
