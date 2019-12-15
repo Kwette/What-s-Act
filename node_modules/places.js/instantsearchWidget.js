@@ -9,3 +9,4 @@
 var widget = require('./src/instantsearch/widget');
 
 module.exports = widget["default"];
+/* eslint-enable import/no-commonjs */

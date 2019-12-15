@@ -1,6 +1,6 @@
 // @flow
 
-import { getJSON } from '../util/ajax';
+import {getJSON} from '../util/ajax';
 
 import performance from '../util/performance';
 import rewind from '@mapbox/geojson-rewind';
@@ -10,7 +10,7 @@ import Supercluster from 'supercluster';
 import geojsonvt from 'geojson-vt';
 import assert from 'assert';
 import VectorTileWorkerSource from './vector_tile_worker_source';
-import { createExpression } from '../style-spec/expression';
+import {createExpression} from '../style-spec/expression';
 
 import type {
     WorkerTileParameters,
@@ -21,8 +21,8 @@ import type Actor from '../util/actor';
 import type StyleLayerIndex from '../style/style_layer_index';
 
 import type {LoadVectorDataCallback} from './vector_tile_worker_source';
-import type { RequestParameters, ResponseCallback } from '../util/ajax';
-import type { Callback } from '../types/callback';
+import type {RequestParameters, ResponseCallback} from '../util/ajax';
+import type {Callback} from '../types/callback';
 import type {GeoJSONFeature} from '@mapbox/geojson-types';
 
 export type LoadGeoJSONParameters = {
@@ -104,8 +104,8 @@ class GeoJSONWorkerSource extends VectorTileWorkerSource {
      * GeoJSON based on parameters passed from the main-thread Source.
      * See {@link GeoJSONWorkerSource#loadGeoJSON}.
      */
-    constructor(actor: Actor, layerIndex: StyleLayerIndex, loadGeoJSON: ?LoadGeoJSON) {
-        super(actor, layerIndex, loadGeoJSONTile);
+    constructor(actor: Actor, layerIndex: StyleLayerIndex, availableImages: Array<string>, loadGeoJSON: ?LoadGeoJSON) {
+        super(actor, layerIndex, availableImages, loadGeoJSONTile);
         if (loadGeoJSON) {
             this.loadGeoJSON = loadGeoJSON;
         }
@@ -132,7 +132,7 @@ class GeoJSONWorkerSource extends VectorTileWorkerSource {
         abandoned?: boolean }>) {
         if (this._pendingCallback) {
             // Tell the foreground the previous call has been abandoned
-            this._pendingCallback(null, { abandoned: true });
+            this._pendingCallback(null, {abandoned: true});
         }
         this._pendingCallback = callback;
         this._pendingLoadDataParams = params;
@@ -167,7 +167,7 @@ class GeoJSONWorkerSource extends VectorTileWorkerSource {
             if (err || !data) {
                 return callback(err);
             } else if (typeof data !== 'object') {
-                return callback(new Error("Input data is not a valid GeoJSON object."));
+                return callback(new Error(`Input data given to '${params.source}' is not a valid GeoJSON object.`));
             } else {
                 rewind(data, true);
 
@@ -267,17 +267,17 @@ class GeoJSONWorkerSource extends VectorTileWorkerSource {
             try {
                 return callback(null, JSON.parse(params.data));
             } catch (e) {
-                return callback(new Error("Input data is not a valid GeoJSON object."));
+                return callback(new Error(`Input data given to '${params.source}' is not a valid GeoJSON object.`));
             }
         } else {
-            return callback(new Error("Input data is not a valid GeoJSON object."));
+            return callback(new Error(`Input data given to '${params.source}' is not a valid GeoJSON object.`));
         }
     }
 
     removeSource(params: {source: string}, callback: Callback<mixed>) {
         if (this._pendingCallback) {
             // Don't leak callbacks
-            this._pendingCallback(null, { abandoned: true });
+            this._pendingCallback(null, {abandoned: true});
         }
         callback();
     }

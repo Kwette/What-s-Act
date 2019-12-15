@@ -8,7 +8,7 @@ require('./src/navigatorLanguage');
 
 var createAutocompleteDataset = require('./src/createAutocompleteDataset')["default"];
 
-var css = require('./src/places.css')["default"];
+var css = require('./babel-css')["default"];
 
 var insertCss = require('insert-css');
 
@@ -17,3 +17,4 @@ insertCss(css, {
 }); // must use module.exports to be commonJS compatible
 
 module.exports = createAutocompleteDataset;
+/* eslint-enable import/no-commonjs */
